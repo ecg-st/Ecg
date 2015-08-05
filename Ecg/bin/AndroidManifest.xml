@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="com.nju.ecg"
+      android:versionCode="1"
+      android:versionName="0.1">
+    <uses-sdk android:minSdkVersion="8"/> <!-- android:targetSdkVersion="11" 会导致必须非全屏才能使用菜单 -->
+	<uses-permission android:name="android.permission.BLUETOOTH" />
+	<uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+	<uses-permission android:name="android.permission.WRITE_SDCARD" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+	<uses-permission android:name="android.permission.VIBRATE" />
+	
+	<!-- 发送短信权限 -->
+	<uses-permission android:name="android.permission.SEND_SMS"/>
+	<!-- 开机启动监听 -->
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+	
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"></uses-permission>
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+	<uses-permission android:name="android.permission.CHANGE_WIFI_STATE"></uses-permission>
+	<uses-permission android:name="android.permission.READ_PHONE_STATE"></uses-permission>
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"></uses-permission>
+	<uses-permission android:name="android.permission.READ_LOGS"></uses-permission>
+
+<supports-screens
+    android:anyDensity="true"
+    android:largeScreens="true"
+    android:normalScreens="true"
+    android:resizeable="true"
+    android:smallScreens="true" />
+
+    <application android:icon="@drawable/icon"  android:label="@string/app_name"
+          android:name=".service.EcgApp">
+          
+        <activity android:name=".wave.EcgWelcomeScreen"
+			android:label="@string/app_name"
+			android:exported="true"
+			android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+         <activity android:name=".bluetooth.DeviceListActivity"
+				android:label="@string/select_device"
+				android:screenOrientation="portrait"
+				android:theme="@android:style/Theme.Dialog"
+				android:configChanges="orientation|keyboardHidden">
+		</activity>         
+        <activity android:name=".wave.WaveScreen"
+			android:exported="true"
+			android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:configChanges="keyboardHidden|orientation">
+        </activity>
+        <activity android:name=".wave.DataTransferActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:configChanges="keyboardHidden|orientation">
+        </activity>
+        <activity android:name=".wave.FileListActivity"
+                 android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+                 android:screenOrientation="portrait"
+                 android:configChanges="keyboardHidden|orientation"/>
+		<service
+            android:name=".service.EcgService">
+        </service>
+        <service android:name="com.baidu.location.f" android:enabled="true" android:process=":remote">
+        </service>
+		
+		<receiver
+            android:name=".service.EcgReceiver">
+            <intent-filter>
+                <action
+                    android:name="com.nju.ecg.action.ecgservice.started" />
+                <action
+                    android:name="com.nju.ecg.action.read_phone_data" />
+            </intent-filter>
+        </receiver>
+		<receiver android:name=".wave.WaveScreen$AlarmReceiver">
+		</receiver>
+		<receiver android:name=".service.BootReceiver">
+		    <intent-filter>
+		        <action android:name="android.intent.action.BOOT_COMPLETED"/>
+		    </intent-filter>
+		</receiver>
+        
+    </application>
+</manifest>

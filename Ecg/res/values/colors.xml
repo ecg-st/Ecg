@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="WHITE">#FFFFFFFF</color>
+    <color name="WHITE_TRANSPARENT">#7FFFFFFF</color>
+    <color name="GREY">#A8050505</color>
+    <color name="BLACK">#FF000000</color>
+    <color name="RED">#FFFF0000</color>
+    <color name="GREEN">#FF00FF00</color>
+    <color name="TOUCH_LOCK_OVERLAY">#EFFFFFFF</color>
+    <color name="CALL_END_OVERLAY">#3FFF0000</color>
+    <color name="POPUP_BACKGROUND">#7F000000</color>
+    <color name="TRANSPARENT">#00000000</color>
+    <color name="HINT_COLOR_SEARCH">#ffc2c3c3</color>
+    <color name="QUICKCONTACT_DISAMBIG">#f2f2f2</color>
+    <color name="record_textStart">#FFFFFF</color>
+    <color name="record_textEnded">#FF6072</color> <!-- red -->
+</resources>
