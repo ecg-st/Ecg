@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="com.nju.ecg"
+      android:versionCode="1"
+      android:versionName="1.0">
+    <uses-sdk android:minSdkVersion="8"/> <!-- android:targetSdkVersion="11" 会导致必须非全屏才能使用菜单 -->
+	<uses-permission android:name="android.permission.BLUETOOTH" />
+	<uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.WRITE_SDCARD" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+	<uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"></uses-permission>
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+	<uses-permission android:name="android.permission.CHANGE_WIFI_STATE"></uses-permission>
+	<uses-permission android:name="android.permission.READ_PHONE_STATE"></uses-permission>
+	<uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"></uses-permission>
+	<uses-permission android:name="android.permission.READ_LOGS"></uses-permission>
+	
+	<!-- added by zhf 20151005 -->
+	<uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+	
+
+    <application android:icon="@drawable/ecg_pic"  android:label="@string/app_name"
+          android:name="com.nju.ecg.service.EcgApp">
+          
+        <activity android:name=".wave.EcgWelcomeScreen"
+			android:label="@string/app_name"
+			android:exported="true"
+            android:screenOrientation="landscape"
+            android:configChanges="keyboardHidden|orientation">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".wave.ZoomEcgActivity"
+                 android:label="@string/app_name"
+                 android:screenOrientation="landscape"
+                 android:configChanges="keyboardHidden|orientation">
+        </activity>
+        <activity android:name=".wave.BackEcgActivity"
+                 android:screenOrientation="landscape"
+                 android:configChanges="keyboardHidden|orientation">
+        </activity>
+        <activity android:name=".wave.DotGraphActivity"
+                 android:screenOrientation="landscape"
+                 android:configChanges="keyboardHidden|orientation">
+        </activity>
+        <activity android:name=".bluetooth.DeviceListActivity"
+				android:label="@string/select_device"
+				android:screenOrientation="landscape"
+				android:theme="@android:style/Theme.Dialog"
+				android:configChanges="orientation|keyboardHidden">
+		</activity>         
+        <activity android:name=".wave.WaveScreen"
+			android:exported="true"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="stateHidden"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:configChanges="keyboardHidden">
+        </activity>
+        <activity android:name=".wave.DataTransferActivity"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:configChanges="keyboardHidden|orientation">
+        </activity>
+        <activity android:name=".wave.FileListActivity"
+                 android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+                 android:screenOrientation="landscape"
+                 android:configChanges="keyboardHidden|orientation"/>
+        
+		<service
+            android:name=".service.EcgService">
+        </service>
+        <service android:name="com.baidu.location.f" android:enabled="true" android:process=":remote">
+        </service>
+        
+		<receiver
+            android:name=".service.EcgReceiver">
+            <intent-filter>
+                <action
+                    android:name="com.nju.ecg.action.ecgservice.started" />
+                <action
+                    android:name="com.nju.ecg.action.read_phone_data" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".service.BootReceiver">
+		    <intent-filter>
+		        <action android:name="android.intent.action.BOOT_COMPLETED"/>
+		    </intent-filter>
+		</receiver>
+		<receiver android:name=".service.ReportReceiver"/>
+		
+		<receiver android:name=".wave.widget.WidgetProviderSmall"
+		    android:label="心电仪(1x1)">
+            <meta-data android:name="android.appwidget.provider"
+                android:resource="@xml/appwidget_provider_small"></meta-data>
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".wave.widget.WidgetProviderMiddle"
+		    android:label="心电仪(2x2)">
+            <meta-data android:name="android.appwidget.provider"
+                android:resource="@xml/appwidget_provider_middle"></meta-data>
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".wave.widget.WidgetProviderBig"
+		    android:label="心电仪(4x4)">
+            <meta-data android:name="android.appwidget.provider"
+                android:resource="@xml/appwidget_provider_big"></meta-data>
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+        </receiver>
+        
+        <!-- add by zhf 20151005 -->
+        <activity
+            android:name="com.mob.tools.MobUIShell"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" >
+        </activity>
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+    </application>
+</manifest>

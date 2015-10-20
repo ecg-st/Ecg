@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" 
+    android:background="@android:color/darker_gray">
+    <com.nju.ecg.wave.RRDotGraphView
+        android:id="@+id/rr_dot_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_margin="10dip"
+        android:layout_weight="1"/>
+    <com.nju.ecg.wave.HeartDotGraphView
+        android:id="@+id/heart_dot_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_margin="10dip"
+        android:layout_weight="1"/>
+</LinearLayout>

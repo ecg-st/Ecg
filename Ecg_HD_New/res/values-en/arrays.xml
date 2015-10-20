@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="lead_choose_items">
+        <item>Limb leads</item>
+        <item>Simulated limb leads</item>
+        <item>Simulated chest leads</item>  
+        <item>Simple limb leads</item>  
+    </string-array>
+    
+    <string-array name="mode_choose_items">
+        <item>Acquisition Mode</item>
+        <item>Playback Mode</item>
+        <item>Demo Mode</item>
+    </string-array>
+    
+    <string-array name="string_ecg_patient_result" translatable="false">
+        <item>Bradycardia</item>
+        <item>Sinus tachycardia</item>
+        <item>Sinus arrest</item>
+        <item>Missed beats</item>
+        <item>Atrial premature beats</item>
+        <item>Ventricular premature beats</item>
+        <item>Ventricular tachycardia</item>
+        <item>RonT</item>
+        <item>Ventricular flutter</item>
+        <item>Premature junctional contraction</item>
+        <item>Sinus Arrhythmia</item>       
+        <item>Abnormal QRS width</item>
+        <item>Continuous widened QRS</item>
+        <item></item>
+    </string-array> 
+    
+    <string-array name="demo_data_name">
+        <item>Sinus tachycardia.raw</item>
+        <item>Sinus Arrhythmia.raw</item>
+        <item>Atrial premature beats.raw</item>
+        <item>Ventricular premature beats.raw</item>
+        <item>Ventricular premature beats2.raw</item>
+        <item>Sinus Bradycardia.raw</item>
+        <item>Normal sinus rhythm.raw</item>
+    </string-array>
+</resources>

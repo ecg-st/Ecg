@@ -1,0 +1,1102 @@
+!SESSION 2013-07-15 13:25:49.409 -----------------------------------------------
+eclipse.buildId=M20110210-1200
+java.version=1.6.0_02
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=zh_CN
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.wst.html.ui.infopop 4 0 2013-07-15 13:25:49.793
+!MESSAGE 
+!STACK 0
+java.util.zip.ZipException: Exception in opening zip file: D:\Android\software\eclipse\plugins\org.eclipse.wst.html.ui.infopop_1.0.200.v201004150328.jar
+	at org.eclipse.osgi.framework.util.SecureAction.getZipFile(SecureAction.java:264)
+	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.basicOpen(ZipBundleFile.java:88)
+	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.getZipFile(ZipBundleFile.java:101)
+	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.checkedOpen(ZipBundleFile.java:74)
+	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.getEntry(ZipBundleFile.java:246)
+	at org.eclipse.osgi.baseadaptor.BaseData.getEntry0(BaseData.java:111)
+	at org.eclipse.osgi.baseadaptor.BaseData.getEntry(BaseData.java:102)
+	at org.eclipse.osgi.internal.baseadaptor.AdaptorUtil.loadManifestFrom(AdaptorUtil.java:187)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseStorageHook.getGeneratedManifest0(EclipseStorageHook.java:406)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseStorageHook.getGeneratedManifest(EclipseStorageHook.java:393)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseStorageHook.createCachedManifest(EclipseStorageHook.java:388)
+	at org.eclipse.core.runtime.internal.adaptor.CachedManifest.getManifest(CachedManifest.java:42)
+	at org.eclipse.core.runtime.internal.adaptor.CachedManifest.get(CachedManifest.java:142)
+	at org.eclipse.osgi.framework.internal.core.ManifestLocalization.getResourceBundle(ManifestLocalization.java:95)
+	at org.eclipse.osgi.framework.internal.core.ManifestLocalization.getHeaders(ManifestLocalization.java:53)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getHeaders(AbstractBundle.java:954)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getHeaders(AbstractBundle.java:901)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.uninstallWorkerPrivileged(AbstractBundle.java:823)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle$4.run(AbstractBundle.java:770)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.uninstallWorker(AbstractBundle.java:794)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.uninstall(AbstractBundle.java:768)
+	at org.eclipse.equinox.internal.simpleconfigurator.ConfigApplier.uninstallBundles(ConfigApplier.java:357)
+	at org.eclipse.equinox.internal.simpleconfigurator.ConfigApplier.install(ConfigApplier.java:90)
+	at org.eclipse.equinox.internal.simpleconfigurator.SimpleConfiguratorImpl.applyConfiguration(SimpleConfiguratorImpl.java:129)
+	at org.eclipse.equinox.internal.simpleconfigurator.SimpleConfiguratorImpl.applyConfiguration(SimpleConfiguratorImpl.java:143)
+	at org.eclipse.equinox.internal.simpleconfigurator.Activator.start(Activator.java:48)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl$1.run(BundleContextImpl.java:783)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.startActivator(BundleContextImpl.java:774)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.start(BundleContextImpl.java:755)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:370)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.resume(AbstractBundle.java:374)
+	at org.eclipse.osgi.framework.internal.core.Framework.resumeBundle(Framework.java:1067)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:561)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:546)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.incFWSL(StartLevelManager.java:459)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(StartLevelManager.java:243)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:440)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:227)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:337)
+Caused by: java.util.zip.ZipException: error in opening zip file
+	at java.util.zip.ZipFile.open(Native Method)
+	at java.util.zip.ZipFile.<init>(Unknown Source)
+	at java.util.zip.ZipFile.<init>(Unknown Source)
+	at org.eclipse.osgi.framework.util.SecureAction.getZipFile(SecureAction.java:251)
+	... 40 more
+
+!ENTRY org.eclipse.osgi 4 0 2013-07-15 13:25:49.796
+!MESSAGE Unexpected exception occurred loading manifest for bundle at the location: reference:file:plugins/org.eclipse.wst.html.ui.infopop_1.0.200.v201004150328.jar.
+!STACK 0
+org.osgi.framework.BundleException: Error converting plugin at D:\Android\software\eclipse\plugins\org.eclipse.wst.html.ui.infopop_1.0.200.v201004150328.jar.
+	at org.eclipse.core.runtime.internal.adaptor.EclipseStorageHook.generateManifest(EclipseStorageHook.java:446)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseStorageHook.getGeneratedManifest0(EclipseStorageHook.java:423)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseStorageHook.getGeneratedManifest(EclipseStorageHook.java:393)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseStorageHook.createCachedManifest(EclipseStorageHook.java:388)
+	at org.eclipse.core.runtime.internal.adaptor.CachedManifest.getManifest(CachedManifest.java:42)
+	at org.eclipse.core.runtime.internal.adaptor.CachedManifest.get(CachedManifest.java:142)
+	at org.eclipse.osgi.framework.internal.core.ManifestLocalization.getResourceBundle(ManifestLocalization.java:95)
+	at org.eclipse.osgi.framework.internal.core.ManifestLocalization.getHeaders(ManifestLocalization.java:53)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getHeaders(AbstractBundle.java:954)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getHeaders(AbstractBundle.java:901)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.uninstallWorkerPrivileged(AbstractBundle.java:823)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle$4.run(AbstractBundle.java:770)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.uninstallWorker(AbstractBundle.java:794)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.uninstall(AbstractBundle.java:768)
+	at org.eclipse.equinox.internal.simpleconfigurator.ConfigApplier.uninstallBundles(ConfigApplier.java:357)
+	at org.eclipse.equinox.internal.simpleconfigurator.ConfigApplier.install(ConfigApplier.java:90)
+	at org.eclipse.equinox.internal.simpleconfigurator.SimpleConfiguratorImpl.applyConfiguration(SimpleConfiguratorImpl.java:129)
+	at org.eclipse.equinox.internal.simpleconfigurator.SimpleConfiguratorImpl.applyConfiguration(SimpleConfiguratorImpl.java:143)
+	at org.eclipse.equinox.internal.simpleconfigurator.Activator.start(Activator.java:48)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl$1.run(BundleContextImpl.java:783)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.startActivator(BundleContextImpl.java:774)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.start(BundleContextImpl.java:755)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:370)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.resume(AbstractBundle.java:374)
+	at org.eclipse.osgi.framework.internal.core.Framework.resumeBundle(Framework.java:1067)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:561)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:546)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.incFWSL(StartLevelManager.java:459)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(StartLevelManager.java:243)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:440)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:227)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:337)
+Caused by: org.eclipse.osgi.service.pluginconversion.PluginConversionException: Could not find a META-INF/MANIFEST.MF, plugin.xml or a fragment.xml in D:\Android\software\eclipse\plugins\org.eclipse.wst.html.ui.infopop_1.0.200.v201004150328.jar.
+	at org.eclipse.core.runtime.internal.adaptor.PluginConverterImpl.fillPluginInfo(PluginConverterImpl.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.PluginConverterImpl.convertManifest(PluginConverterImpl.java:711)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseStorageHook.generateManifest(EclipseStorageHook.java:443)
+	... 33 more
+Caused by: java.util.zip.ZipException: error in opening zip file
+	at java.util.zip.ZipFile.open(Native Method)
+	at java.util.zip.ZipFile.<init>(Unknown Source)
+	at java.util.zip.ZipFile.<init>(Unknown Source)
+	at org.eclipse.core.runtime.internal.adaptor.PluginConverterImpl.findPluginManifest(PluginConverterImpl.java:179)
+	at org.eclipse.core.runtime.internal.adaptor.PluginConverterImpl.fillPluginInfo(PluginConverterImpl.java:108)
+	... 35 more
+Root exception:
+org.eclipse.osgi.service.pluginconversion.PluginConversionException: Could not find a META-INF/MANIFEST.MF, plugin.xml or a fragment.xml in D:\Android\software\eclipse\plugins\org.eclipse.wst.html.ui.infopop_1.0.200.v201004150328.jar.
+	at org.eclipse.core.runtime.internal.adaptor.PluginConverterImpl.fillPluginInfo(PluginConverterImpl.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.PluginConverterImpl.convertManifest(PluginConverterImpl.java:711)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseStorageHook.generateManifest(EclipseStorageHook.java:443)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseStorageHook.getGeneratedManifest0(EclipseStorageHook.java:423)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseStorageHook.getGeneratedManifest(EclipseStorageHook.java:393)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseStorageHook.createCachedManifest(EclipseStorageHook.java:388)
+	at org.eclipse.core.runtime.internal.adaptor.CachedManifest.getManifest(CachedManifest.java:42)
+	at org.eclipse.core.runtime.internal.adaptor.CachedManifest.get(CachedManifest.java:142)
+	at org.eclipse.osgi.framework.internal.core.ManifestLocalization.getResourceBundle(ManifestLocalization.java:95)
+	at org.eclipse.osgi.framework.internal.core.ManifestLocalization.getHeaders(ManifestLocalization.java:53)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getHeaders(AbstractBundle.java:954)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getHeaders(AbstractBundle.java:901)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.uninstallWorkerPrivileged(AbstractBundle.java:823)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle$4.run(AbstractBundle.java:770)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.uninstallWorker(AbstractBundle.java:794)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.uninstall(AbstractBundle.java:768)
+	at org.eclipse.equinox.internal.simpleconfigurator.ConfigApplier.uninstallBundles(ConfigApplier.java:357)
+	at org.eclipse.equinox.internal.simpleconfigurator.ConfigApplier.install(ConfigApplier.java:90)
+	at org.eclipse.equinox.internal.simpleconfigurator.SimpleConfiguratorImpl.applyConfiguration(SimpleConfiguratorImpl.java:129)
+	at org.eclipse.equinox.internal.simpleconfigurator.SimpleConfiguratorImpl.applyConfiguration(SimpleConfiguratorImpl.java:143)
+	at org.eclipse.equinox.internal.simpleconfigurator.Activator.start(Activator.java:48)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl$1.run(BundleContextImpl.java:783)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.startActivator(BundleContextImpl.java:774)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.start(BundleContextImpl.java:755)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:370)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.resume(AbstractBundle.java:374)
+	at org.eclipse.osgi.framework.internal.core.Framework.resumeBundle(Framework.java:1067)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:561)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:546)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.incFWSL(StartLevelManager.java:459)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(StartLevelManager.java:243)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:440)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:227)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:337)
+Caused by: java.util.zip.ZipException: error in opening zip file
+	at java.util.zip.ZipFile.open(Native Method)
+	at java.util.zip.ZipFile.<init>(Unknown Source)
+	at java.util.zip.ZipFile.<init>(Unknown Source)
+	at org.eclipse.core.runtime.internal.adaptor.PluginConverterImpl.findPluginManifest(PluginConverterImpl.java:179)
+	at org.eclipse.core.runtime.internal.adaptor.PluginConverterImpl.fillPluginInfo(PluginConverterImpl.java:108)
+	... 35 more
+
+!ENTRY org.eclipse.wst.html.ui.infopop 4 0 2013-07-15 13:25:49.797
+!MESSAGE 
+!STACK 0
+java.util.zip.ZipException: Exception in opening zip file: D:\Android\software\eclipse\plugins\org.eclipse.wst.html.ui.infopop_1.0.200.v201004150328.jar
+	at org.eclipse.osgi.framework.util.SecureAction.getZipFile(SecureAction.java:264)
+	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.basicOpen(ZipBundleFile.java:88)
+	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.getZipFile(ZipBundleFile.java:101)
+	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.checkedOpen(ZipBundleFile.java:74)
+	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.getEntry(ZipBundleFile.java:246)
+	at org.eclipse.osgi.baseadaptor.BaseData.getEntry0(BaseData.java:111)
+	at org.eclipse.osgi.baseadaptor.BaseData.getEntry(BaseData.java:102)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getEntry0(AbstractBundle.java:1236)
+	at org.eclipse.osgi.framework.internal.core.ManifestLocalization.findInResolved(ManifestLocalization.java:155)
+	at org.eclipse.osgi.framework.internal.core.ManifestLocalization.findResource(ManifestLocalization.java:149)
+	at org.eclipse.osgi.framework.internal.core.ManifestLocalization.getResourceBundle(ManifestLocalization.java:107)
+	at org.eclipse.osgi.framework.internal.core.ManifestLocalization.getHeaders(ManifestLocalization.java:53)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getHeaders(AbstractBundle.java:954)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getHeaders(AbstractBundle.java:901)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.uninstallWorkerPrivileged(AbstractBundle.java:823)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle$4.run(AbstractBundle.java:770)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.uninstallWorker(AbstractBundle.java:794)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.uninstall(AbstractBundle.java:768)
+	at org.eclipse.equinox.internal.simpleconfigurator.ConfigApplier.uninstallBundles(ConfigApplier.java:357)
+	at org.eclipse.equinox.internal.simpleconfigurator.ConfigApplier.install(ConfigApplier.java:90)
+	at org.eclipse.equinox.internal.simpleconfigurator.SimpleConfiguratorImpl.applyConfiguration(SimpleConfiguratorImpl.java:129)
+	at org.eclipse.equinox.internal.simpleconfigurator.SimpleConfiguratorImpl.applyConfiguration(SimpleConfiguratorImpl.java:143)
+	at org.eclipse.equinox.internal.simpleconfigurator.Activator.start(Activator.java:48)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl$1.run(BundleContextImpl.java:783)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.startActivator(BundleContextImpl.java:774)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.start(BundleContextImpl.java:755)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:370)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.resume(AbstractBundle.java:374)
+	at org.eclipse.osgi.framework.internal.core.Framework.resumeBundle(Framework.java:1067)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:561)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:546)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.incFWSL(StartLevelManager.java:459)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(StartLevelManager.java:243)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:440)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:227)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:337)
+Caused by: java.util.zip.ZipException: error in opening zip file
+	at java.util.zip.ZipFile.open(Native Method)
+	at java.util.zip.ZipFile.<init>(Unknown Source)
+	at java.util.zip.ZipFile.<init>(Unknown Source)
+	at org.eclipse.osgi.framework.util.SecureAction.getZipFile(SecureAction.java:251)
+	... 37 more
+
+!ENTRY org.eclipse.wst.html.ui.infopop 4 0 2013-07-15 13:25:49.798
+!MESSAGE 
+!STACK 0
+java.util.zip.ZipException: Exception in opening zip file: D:\Android\software\eclipse\plugins\org.eclipse.wst.html.ui.infopop_1.0.200.v201004150328.jar
+	at org.eclipse.osgi.framework.util.SecureAction.getZipFile(SecureAction.java:264)
+	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.basicOpen(ZipBundleFile.java:88)
+	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.getZipFile(ZipBundleFile.java:101)
+	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.checkedOpen(ZipBundleFile.java:74)
+	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.getEntry(ZipBundleFile.java:246)
+	at org.eclipse.osgi.baseadaptor.BaseData.getEntry0(BaseData.java:111)
+	at org.eclipse.osgi.baseadaptor.BaseData.getEntry(BaseData.java:102)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getEntry0(AbstractBundle.java:1236)
+	at org.eclipse.osgi.framework.internal.core.ManifestLocalization.findInResolved(ManifestLocalization.java:155)
+	at org.eclipse.osgi.framework.internal.core.ManifestLocalization.findResource(ManifestLocalization.java:149)
+	at org.eclipse.osgi.framework.internal.core.ManifestLocalization.getResourceBundle(ManifestLocalization.java:107)
+	at org.eclipse.osgi.framework.internal.core.ManifestLocalization.getHeaders(ManifestLocalization.java:53)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getHeaders(AbstractBundle.java:954)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getHeaders(AbstractBundle.java:901)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.uninstallWorkerPrivileged(AbstractBundle.java:823)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle$4.run(AbstractBundle.java:770)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.uninstallWorker(AbstractBundle.java:794)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.uninstall(AbstractBundle.java:768)
+	at org.eclipse.equinox.internal.simpleconfigurator.ConfigApplier.uninstallBundles(ConfigApplier.java:357)
+	at org.eclipse.equinox.internal.simpleconfigurator.ConfigApplier.install(ConfigApplier.java:90)
+	at org.eclipse.equinox.internal.simpleconfigurator.SimpleConfiguratorImpl.applyConfiguration(SimpleConfiguratorImpl.java:129)
+	at org.eclipse.equinox.internal.simpleconfigurator.SimpleConfiguratorImpl.applyConfiguration(SimpleConfiguratorImpl.java:143)
+	at org.eclipse.equinox.internal.simpleconfigurator.Activator.start(Activator.java:48)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl$1.run(BundleContextImpl.java:783)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.startActivator(BundleContextImpl.java:774)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.start(BundleContextImpl.java:755)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:370)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.resume(AbstractBundle.java:374)
+	at org.eclipse.osgi.framework.internal.core.Framework.resumeBundle(Framework.java:1067)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:561)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:546)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.incFWSL(StartLevelManager.java:459)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(StartLevelManager.java:243)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:440)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:227)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:337)
+Caused by: java.util.zip.ZipException: error in opening zip file
+	at java.util.zip.ZipFile.open(Native Method)
+	at java.util.zip.ZipFile.<init>(Unknown Source)
+	at java.util.zip.ZipFile.<init>(Unknown Source)
+	at org.eclipse.osgi.framework.util.SecureAction.getZipFile(SecureAction.java:251)
+	... 37 more
+
+!ENTRY org.eclipse.wst.html.ui.infopop 4 0 2013-07-15 13:25:49.798
+!MESSAGE 
+!STACK 0
+java.util.zip.ZipException: Exception in opening zip file: D:\Android\software\eclipse\plugins\org.eclipse.wst.html.ui.infopop_1.0.200.v201004150328.jar
+	at org.eclipse.osgi.framework.util.SecureAction.getZipFile(SecureAction.java:264)
+	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.basicOpen(ZipBundleFile.java:88)
+	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.getZipFile(ZipBundleFile.java:101)
+	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.checkedOpen(ZipBundleFile.java:74)
+	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.getEntry(ZipBundleFile.java:246)
+	at org.eclipse.osgi.baseadaptor.BaseData.getEntry0(BaseData.java:111)
+	at org.eclipse.osgi.baseadaptor.BaseData.getEntry(BaseData.java:102)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getEntry0(AbstractBundle.java:1236)
+	at org.eclipse.osgi.framework.internal.core.ManifestLocalization.findInResolved(ManifestLocalization.java:155)
+	at org.eclipse.osgi.framework.internal.core.ManifestLocalization.findResource(ManifestLocalization.java:149)
+	at org.eclipse.osgi.framework.internal.core.ManifestLocalization.getResourceBundle(ManifestLocalization.java:107)
+	at org.eclipse.osgi.framework.internal.core.ManifestLocalization.getHeaders(ManifestLocalization.java:53)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getHeaders(AbstractBundle.java:954)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getHeaders(AbstractBundle.java:901)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.uninstallWorkerPrivileged(AbstractBundle.java:823)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle$4.run(AbstractBundle.java:770)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.uninstallWorker(AbstractBundle.java:794)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.uninstall(AbstractBundle.java:768)
+	at org.eclipse.equinox.internal.simpleconfigurator.ConfigApplier.uninstallBundles(ConfigApplier.java:357)
+	at org.eclipse.equinox.internal.simpleconfigurator.ConfigApplier.install(ConfigApplier.java:90)
+	at org.eclipse.equinox.internal.simpleconfigurator.SimpleConfiguratorImpl.applyConfiguration(SimpleConfiguratorImpl.java:129)
+	at org.eclipse.equinox.internal.simpleconfigurator.SimpleConfiguratorImpl.applyConfiguration(SimpleConfiguratorImpl.java:143)
+	at org.eclipse.equinox.internal.simpleconfigurator.Activator.start(Activator.java:48)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl$1.run(BundleContextImpl.java:783)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.startActivator(BundleContextImpl.java:774)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.start(BundleContextImpl.java:755)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:370)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.resume(AbstractBundle.java:374)
+	at org.eclipse.osgi.framework.internal.core.Framework.resumeBundle(Framework.java:1067)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:561)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:546)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.incFWSL(StartLevelManager.java:459)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(StartLevelManager.java:243)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:440)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:227)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:337)
+Caused by: java.util.zip.ZipException: error in opening zip file
+	at java.util.zip.ZipFile.open(Native Method)
+	at java.util.zip.ZipFile.<init>(Unknown Source)
+	at java.util.zip.ZipFile.<init>(Unknown Source)
+	at org.eclipse.osgi.framework.util.SecureAction.getZipFile(SecureAction.java:251)
+	... 37 more
+
+!ENTRY org.eclipse.wst.html.ui.infopop 4 0 2013-07-15 13:25:49.799
+!MESSAGE 
+!STACK 0
+java.util.zip.ZipException: Exception in opening zip file: D:\Android\software\eclipse\plugins\org.eclipse.wst.html.ui.infopop_1.0.200.v201004150328.jar
+	at org.eclipse.osgi.framework.util.SecureAction.getZipFile(SecureAction.java:264)
+	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.basicOpen(ZipBundleFile.java:88)
+	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.getZipFile(ZipBundleFile.java:101)
+	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.checkedOpen(ZipBundleFile.java:74)
+	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.getEntry(ZipBundleFile.java:246)
+	at org.eclipse.osgi.baseadaptor.BaseData.getEntry0(BaseData.java:111)
+	at org.eclipse.osgi.baseadaptor.BaseData.getEntry(BaseData.java:102)
+	at org.eclipse.osgi.internal.baseadaptor.AdaptorUtil.loadManifestFrom(AdaptorUtil.java:187)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseStorageHook.getGeneratedManifest0(EclipseStorageHook.java:406)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseStorageHook.getGeneratedManifest(EclipseStorageHook.java:393)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseStorageHook.createCachedManifest(EclipseStorageHook.java:388)
+	at org.eclipse.core.runtime.internal.adaptor.CachedManifest.getManifest(CachedManifest.java:42)
+	at org.eclipse.core.runtime.internal.adaptor.CachedManifest.keys(CachedManifest.java:71)
+	at org.eclipse.osgi.framework.internal.core.ManifestLocalization.getHeaders(ManifestLocalization.java:57)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getHeaders(AbstractBundle.java:954)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getHeaders(AbstractBundle.java:901)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.uninstallWorkerPrivileged(AbstractBundle.java:823)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle$4.run(AbstractBundle.java:770)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.uninstallWorker(AbstractBundle.java:794)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.uninstall(AbstractBundle.java:768)
+	at org.eclipse.equinox.internal.simpleconfigurator.ConfigApplier.uninstallBundles(ConfigApplier.java:357)
+	at org.eclipse.equinox.internal.simpleconfigurator.ConfigApplier.install(ConfigApplier.java:90)
+	at org.eclipse.equinox.internal.simpleconfigurator.SimpleConfiguratorImpl.applyConfiguration(SimpleConfiguratorImpl.java:129)
+	at org.eclipse.equinox.internal.simpleconfigurator.SimpleConfiguratorImpl.applyConfiguration(SimpleConfiguratorImpl.java:143)
+	at org.eclipse.equinox.internal.simpleconfigurator.Activator.start(Activator.java:48)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl$1.run(BundleContextImpl.java:783)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.startActivator(BundleContextImpl.java:774)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.start(BundleContextImpl.java:755)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:370)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.resume(AbstractBundle.java:374)
+	at org.eclipse.osgi.framework.internal.core.Framework.resumeBundle(Framework.java:1067)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:561)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:546)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.incFWSL(StartLevelManager.java:459)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(StartLevelManager.java:243)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:440)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:227)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:337)
+Caused by: java.util.zip.ZipException: error in opening zip file
+	at java.util.zip.ZipFile.open(Native Method)
+	at java.util.zip.ZipFile.<init>(Unknown Source)
+	at java.util.zip.ZipFile.<init>(Unknown Source)
+	at org.eclipse.osgi.framework.util.SecureAction.getZipFile(SecureAction.java:251)
+	... 39 more
+
+!ENTRY org.eclipse.osgi 4 0 2013-07-15 13:25:49.799
+!MESSAGE Unexpected exception occurred loading manifest for bundle at the location: reference:file:plugins/org.eclipse.wst.html.ui.infopop_1.0.200.v201004150328.jar.
+!STACK 0
+org.osgi.framework.BundleException: Error converting plugin at D:\Android\software\eclipse\plugins\org.eclipse.wst.html.ui.infopop_1.0.200.v201004150328.jar.
+	at org.eclipse.core.runtime.internal.adaptor.EclipseStorageHook.generateManifest(EclipseStorageHook.java:446)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseStorageHook.getGeneratedManifest0(EclipseStorageHook.java:423)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseStorageHook.getGeneratedManifest(EclipseStorageHook.java:393)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseStorageHook.createCachedManifest(EclipseStorageHook.java:388)
+	at org.eclipse.core.runtime.internal.adaptor.CachedManifest.getManifest(CachedManifest.java:42)
+	at org.eclipse.core.runtime.internal.adaptor.CachedManifest.keys(CachedManifest.java:71)
+	at org.eclipse.osgi.framework.internal.core.ManifestLocalization.getHeaders(ManifestLocalization.java:57)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getHeaders(AbstractBundle.java:954)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getHeaders(AbstractBundle.java:901)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.uninstallWorkerPrivileged(AbstractBundle.java:823)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle$4.run(AbstractBundle.java:770)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.uninstallWorker(AbstractBundle.java:794)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.uninstall(AbstractBundle.java:768)
+	at org.eclipse.equinox.internal.simpleconfigurator.ConfigApplier.uninstallBundles(ConfigApplier.java:357)
+	at org.eclipse.equinox.internal.simpleconfigurator.ConfigApplier.install(ConfigApplier.java:90)
+	at org.eclipse.equinox.internal.simpleconfigurator.SimpleConfiguratorImpl.applyConfiguration(SimpleConfiguratorImpl.java:129)
+	at org.eclipse.equinox.internal.simpleconfigurator.SimpleConfiguratorImpl.applyConfiguration(SimpleConfiguratorImpl.java:143)
+	at org.eclipse.equinox.internal.simpleconfigurator.Activator.start(Activator.java:48)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl$1.run(BundleContextImpl.java:783)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.startActivator(BundleContextImpl.java:774)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.start(BundleContextImpl.java:755)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:370)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.resume(AbstractBundle.java:374)
+	at org.eclipse.osgi.framework.internal.core.Framework.resumeBundle(Framework.java:1067)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:561)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:546)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.incFWSL(StartLevelManager.java:459)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(StartLevelManager.java:243)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:440)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:227)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:337)
+Caused by: org.eclipse.osgi.service.pluginconversion.PluginConversionException: Could not find a META-INF/MANIFEST.MF, plugin.xml or a fragment.xml in D:\Android\software\eclipse\plugins\org.eclipse.wst.html.ui.infopop_1.0.200.v201004150328.jar.
+	at org.eclipse.core.runtime.internal.adaptor.PluginConverterImpl.fillPluginInfo(PluginConverterImpl.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.PluginConverterImpl.convertManifest(PluginConverterImpl.java:711)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseStorageHook.generateManifest(EclipseStorageHook.java:443)
+	... 32 more
+Caused by: java.util.zip.ZipException: error in opening zip file
+	at java.util.zip.ZipFile.open(Native Method)
+	at java.util.zip.ZipFile.<init>(Unknown Source)
+	at java.util.zip.ZipFile.<init>(Unknown Source)
+	at org.eclipse.core.runtime.internal.adaptor.PluginConverterImpl.findPluginManifest(PluginConverterImpl.java:179)
+	at org.eclipse.core.runtime.internal.adaptor.PluginConverterImpl.fillPluginInfo(PluginConverterImpl.java:108)
+	... 34 more
+Root exception:
+org.eclipse.osgi.service.pluginconversion.PluginConversionException: Could not find a META-INF/MANIFEST.MF, plugin.xml or a fragment.xml in D:\Android\software\eclipse\plugins\org.eclipse.wst.html.ui.infopop_1.0.200.v201004150328.jar.
+	at org.eclipse.core.runtime.internal.adaptor.PluginConverterImpl.fillPluginInfo(PluginConverterImpl.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.PluginConverterImpl.convertManifest(PluginConverterImpl.java:711)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseStorageHook.generateManifest(EclipseStorageHook.java:443)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseStorageHook.getGeneratedManifest0(EclipseStorageHook.java:423)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseStorageHook.getGeneratedManifest(EclipseStorageHook.java:393)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseStorageHook.createCachedManifest(EclipseStorageHook.java:388)
+	at org.eclipse.core.runtime.internal.adaptor.CachedManifest.getManifest(CachedManifest.java:42)
+	at org.eclipse.core.runtime.internal.adaptor.CachedManifest.keys(CachedManifest.java:71)
+	at org.eclipse.osgi.framework.internal.core.ManifestLocalization.getHeaders(ManifestLocalization.java:57)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getHeaders(AbstractBundle.java:954)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getHeaders(AbstractBundle.java:901)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.uninstallWorkerPrivileged(AbstractBundle.java:823)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle$4.run(AbstractBundle.java:770)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.uninstallWorker(AbstractBundle.java:794)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.uninstall(AbstractBundle.java:768)
+	at org.eclipse.equinox.internal.simpleconfigurator.ConfigApplier.uninstallBundles(ConfigApplier.java:357)
+	at org.eclipse.equinox.internal.simpleconfigurator.ConfigApplier.install(ConfigApplier.java:90)
+	at org.eclipse.equinox.internal.simpleconfigurator.SimpleConfiguratorImpl.applyConfiguration(SimpleConfiguratorImpl.java:129)
+	at org.eclipse.equinox.internal.simpleconfigurator.SimpleConfiguratorImpl.applyConfiguration(SimpleConfiguratorImpl.java:143)
+	at org.eclipse.equinox.internal.simpleconfigurator.Activator.start(Activator.java:48)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl$1.run(BundleContextImpl.java:783)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.startActivator(BundleContextImpl.java:774)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.start(BundleContextImpl.java:755)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:370)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.resume(AbstractBundle.java:374)
+	at org.eclipse.osgi.framework.internal.core.Framework.resumeBundle(Framework.java:1067)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:561)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:546)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.incFWSL(StartLevelManager.java:459)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(StartLevelManager.java:243)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:440)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:227)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:337)
+Caused by: java.util.zip.ZipException: error in opening zip file
+	at java.util.zip.ZipFile.open(Native Method)
+	at java.util.zip.ZipFile.<init>(Unknown Source)
+	at java.util.zip.ZipFile.<init>(Unknown Source)
+	at org.eclipse.core.runtime.internal.adaptor.PluginConverterImpl.findPluginManifest(PluginConverterImpl.java:179)
+	at org.eclipse.core.runtime.internal.adaptor.PluginConverterImpl.fillPluginInfo(PluginConverterImpl.java:108)
+	... 34 more
+
+!ENTRY org.eclipse.equinox.simpleconfigurator 4 0 2013-07-15 13:25:49.800
+!MESSAGE 
+!STACK 0
+org.osgi.framework.BundleException: Exception in org.eclipse.equinox.internal.simpleconfigurator.Activator.start() of bundle org.eclipse.equinox.simpleconfigurator.
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.startActivator(BundleContextImpl.java:806)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.start(BundleContextImpl.java:755)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:370)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.resume(AbstractBundle.java:374)
+	at org.eclipse.osgi.framework.internal.core.Framework.resumeBundle(Framework.java:1067)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:561)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:546)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.incFWSL(StartLevelManager.java:459)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(StartLevelManager.java:243)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:440)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:227)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:337)
+Caused by: java.lang.NullPointerException
+	at org.eclipse.core.runtime.internal.adaptor.CachedManifest.keys(CachedManifest.java:71)
+	at org.eclipse.osgi.framework.internal.core.ManifestLocalization.getHeaders(ManifestLocalization.java:57)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getHeaders(AbstractBundle.java:954)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getHeaders(AbstractBundle.java:901)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.uninstallWorkerPrivileged(AbstractBundle.java:823)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle$4.run(AbstractBundle.java:770)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.uninstallWorker(AbstractBundle.java:794)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.uninstall(AbstractBundle.java:768)
+	at org.eclipse.equinox.internal.simpleconfigurator.ConfigApplier.uninstallBundles(ConfigApplier.java:357)
+	at org.eclipse.equinox.internal.simpleconfigurator.ConfigApplier.install(ConfigApplier.java:90)
+	at org.eclipse.equinox.internal.simpleconfigurator.SimpleConfiguratorImpl.applyConfiguration(SimpleConfiguratorImpl.java:129)
+	at org.eclipse.equinox.internal.simpleconfigurator.SimpleConfiguratorImpl.applyConfiguration(SimpleConfiguratorImpl.java:143)
+	at org.eclipse.equinox.internal.simpleconfigurator.Activator.start(Activator.java:48)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl$1.run(BundleContextImpl.java:783)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.startActivator(BundleContextImpl.java:774)
+	... 11 more
+Root exception:
+java.lang.NullPointerException
+	at org.eclipse.core.runtime.internal.adaptor.CachedManifest.keys(CachedManifest.java:71)
+	at org.eclipse.osgi.framework.internal.core.ManifestLocalization.getHeaders(ManifestLocalization.java:57)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getHeaders(AbstractBundle.java:954)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getHeaders(AbstractBundle.java:901)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.uninstallWorkerPrivileged(AbstractBundle.java:823)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle$4.run(AbstractBundle.java:770)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.uninstallWorker(AbstractBundle.java:794)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.uninstall(AbstractBundle.java:768)
+	at org.eclipse.equinox.internal.simpleconfigurator.ConfigApplier.uninstallBundles(ConfigApplier.java:357)
+	at org.eclipse.equinox.internal.simpleconfigurator.ConfigApplier.install(ConfigApplier.java:90)
+	at org.eclipse.equinox.internal.simpleconfigurator.SimpleConfiguratorImpl.applyConfiguration(SimpleConfiguratorImpl.java:129)
+	at org.eclipse.equinox.internal.simpleconfigurator.SimpleConfiguratorImpl.applyConfiguration(SimpleConfiguratorImpl.java:143)
+	at org.eclipse.equinox.internal.simpleconfigurator.Activator.start(Activator.java:48)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl$1.run(BundleContextImpl.java:783)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.startActivator(BundleContextImpl.java:774)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.start(BundleContextImpl.java:755)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:370)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.resume(AbstractBundle.java:374)
+	at org.eclipse.osgi.framework.internal.core.Framework.resumeBundle(Framework.java:1067)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:561)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:546)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.incFWSL(StartLevelManager.java:459)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(StartLevelManager.java:243)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:440)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:227)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:337)
+
+!ENTRY org.eclipse.osgi 4 0 2013-07-15 13:25:50.015
+!MESSAGE Bundle org.eclipse.equinox.simpleconfigurator_1.0.200.v20100503 [1] is not active.
+
+!ENTRY org.eclipse.jface 2 0 2013-07-15 13:26:07.281
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-07-15 13:26:07.281
+!MESSAGE A conflict occurred for ALT+CTRL+R:
+Binding(ALT+CTRL+R,
+	ParameterizedCommand(Command(edu.hawaii.ics.csdl.jupiter.ui.command.ReviewAdditionActionDelegate,Add Review Issue,
+		,
+		Category(edu.hawaii.ics.csdl.jupiter.ui.commands.category,Jupiter,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+CTRL+R,
+	ParameterizedCommand(Command(org.python.pydev.debug.setnext,Set Next Statement,
+		,
+		Category(org.python.pydev.ui.category.run,PyDev - Run,Python run category,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.ui.workbench 2 0 2013-07-15 13:26:07.285
+!MESSAGE A handler conflict occurred.  This may disable some commands.
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2013-07-15 13:26:07.285
+!MESSAGE Conflict for 'AUTOGEN:::org.eclipse.ui.cheatsheets.actionSet/org.eclipse.ui.cheatsheets.actions.CheatSheetHelpMenuAction':
+HandlerActivation(commandId=AUTOGEN:::org.eclipse.ui.cheatsheets.actionSet/org.eclipse.ui.cheatsheets.actions.CheatSheetHelpMenuAction,
+	handler=ActionDelegateHandlerProxy(null,org.eclipse.ui.cheatsheets.CheatSheetExtensionFactory:helpMenuAction),
+	expression=AndExpression(ActionSetExpression(org.eclipse.ui.cheatsheets.actionSet,org.eclipse.ui.internal.WorkbenchWindow@18f729c),WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@18f729c)),sourcePriority=16640)
+HandlerActivation(commandId=AUTOGEN:::org.eclipse.ui.cheatsheets.actionSet/org.eclipse.ui.cheatsheets.actions.CheatSheetHelpMenuAction,
+	handler=ActionDelegateHandlerProxy(null,org.eclipse.ui.cheatsheets.CheatSheetExtensionFactory:helpMenuAction),
+	expression=AndExpression(ActionSetExpression(org.eclipse.ui.cheatsheets.actionSet,org.eclipse.ui.internal.WorkbenchWindow@18f729c),WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@18f729c)),sourcePriority=16640)
+
+!ENTRY edu.hawaii.ics.csdl.jupiter 1 0 2013-07-15 13:26:08.844
+!MESSAGE Jupiter Review Plugin is up.
+!SESSION 2013-07-17 12:27:46.346 -----------------------------------------------
+eclipse.buildId=M20110210-1200
+java.version=1.6.0_02
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=zh_CN
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.wst.html.ui.infopop 4 0 2013-07-17 12:27:46.722
+!MESSAGE 
+!STACK 0
+java.util.zip.ZipException: Exception in opening zip file: D:\Android\software\eclipse\plugins\org.eclipse.wst.html.ui.infopop_1.0.200.v201004150328.jar
+	at org.eclipse.osgi.framework.util.SecureAction.getZipFile(SecureAction.java:264)
+	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.basicOpen(ZipBundleFile.java:88)
+	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.getZipFile(ZipBundleFile.java:101)
+	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.checkedOpen(ZipBundleFile.java:74)
+	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.getEntry(ZipBundleFile.java:246)
+	at org.eclipse.osgi.baseadaptor.BaseData.getEntry0(BaseData.java:111)
+	at org.eclipse.osgi.baseadaptor.BaseData.getEntry(BaseData.java:102)
+	at org.eclipse.osgi.internal.baseadaptor.AdaptorUtil.loadManifestFrom(AdaptorUtil.java:187)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseStorageHook.getGeneratedManifest0(EclipseStorageHook.java:406)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseStorageHook.getGeneratedManifest(EclipseStorageHook.java:393)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseStorageHook.createCachedManifest(EclipseStorageHook.java:388)
+	at org.eclipse.core.runtime.internal.adaptor.CachedManifest.getManifest(CachedManifest.java:42)
+	at org.eclipse.core.runtime.internal.adaptor.CachedManifest.get(CachedManifest.java:142)
+	at org.eclipse.osgi.framework.internal.core.ManifestLocalization.getResourceBundle(ManifestLocalization.java:95)
+	at org.eclipse.osgi.framework.internal.core.ManifestLocalization.getHeaders(ManifestLocalization.java:53)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getHeaders(AbstractBundle.java:954)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getHeaders(AbstractBundle.java:901)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.uninstallWorkerPrivileged(AbstractBundle.java:823)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle$4.run(AbstractBundle.java:770)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.uninstallWorker(AbstractBundle.java:794)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.uninstall(AbstractBundle.java:768)
+	at org.eclipse.equinox.internal.simpleconfigurator.ConfigApplier.uninstallBundles(ConfigApplier.java:357)
+	at org.eclipse.equinox.internal.simpleconfigurator.ConfigApplier.install(ConfigApplier.java:90)
+	at org.eclipse.equinox.internal.simpleconfigurator.SimpleConfiguratorImpl.applyConfiguration(SimpleConfiguratorImpl.java:129)
+	at org.eclipse.equinox.internal.simpleconfigurator.SimpleConfiguratorImpl.applyConfiguration(SimpleConfiguratorImpl.java:143)
+	at org.eclipse.equinox.internal.simpleconfigurator.Activator.start(Activator.java:48)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl$1.run(BundleContextImpl.java:783)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.startActivator(BundleContextImpl.java:774)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.start(BundleContextImpl.java:755)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:370)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.resume(AbstractBundle.java:374)
+	at org.eclipse.osgi.framework.internal.core.Framework.resumeBundle(Framework.java:1067)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:561)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:546)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.incFWSL(StartLevelManager.java:459)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(StartLevelManager.java:243)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:440)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:227)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:337)
+Caused by: java.util.zip.ZipException: error in opening zip file
+	at java.util.zip.ZipFile.open(Native Method)
+	at java.util.zip.ZipFile.<init>(Unknown Source)
+	at java.util.zip.ZipFile.<init>(Unknown Source)
+	at org.eclipse.osgi.framework.util.SecureAction.getZipFile(SecureAction.java:251)
+	... 40 more
+
+!ENTRY org.eclipse.osgi 4 0 2013-07-17 12:27:46.725
+!MESSAGE Unexpected exception occurred loading manifest for bundle at the location: reference:file:plugins/org.eclipse.wst.html.ui.infopop_1.0.200.v201004150328.jar.
+!STACK 0
+org.osgi.framework.BundleException: Error converting plugin at D:\Android\software\eclipse\plugins\org.eclipse.wst.html.ui.infopop_1.0.200.v201004150328.jar.
+	at org.eclipse.core.runtime.internal.adaptor.EclipseStorageHook.generateManifest(EclipseStorageHook.java:446)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseStorageHook.getGeneratedManifest0(EclipseStorageHook.java:423)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseStorageHook.getGeneratedManifest(EclipseStorageHook.java:393)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseStorageHook.createCachedManifest(EclipseStorageHook.java:388)
+	at org.eclipse.core.runtime.internal.adaptor.CachedManifest.getManifest(CachedManifest.java:42)
+	at org.eclipse.core.runtime.internal.adaptor.CachedManifest.get(CachedManifest.java:142)
+	at org.eclipse.osgi.framework.internal.core.ManifestLocalization.getResourceBundle(ManifestLocalization.java:95)
+	at org.eclipse.osgi.framework.internal.core.ManifestLocalization.getHeaders(ManifestLocalization.java:53)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getHeaders(AbstractBundle.java:954)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getHeaders(AbstractBundle.java:901)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.uninstallWorkerPrivileged(AbstractBundle.java:823)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle$4.run(AbstractBundle.java:770)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.uninstallWorker(AbstractBundle.java:794)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.uninstall(AbstractBundle.java:768)
+	at org.eclipse.equinox.internal.simpleconfigurator.ConfigApplier.uninstallBundles(ConfigApplier.java:357)
+	at org.eclipse.equinox.internal.simpleconfigurator.ConfigApplier.install(ConfigApplier.java:90)
+	at org.eclipse.equinox.internal.simpleconfigurator.SimpleConfiguratorImpl.applyConfiguration(SimpleConfiguratorImpl.java:129)
+	at org.eclipse.equinox.internal.simpleconfigurator.SimpleConfiguratorImpl.applyConfiguration(SimpleConfiguratorImpl.java:143)
+	at org.eclipse.equinox.internal.simpleconfigurator.Activator.start(Activator.java:48)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl$1.run(BundleContextImpl.java:783)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.startActivator(BundleContextImpl.java:774)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.start(BundleContextImpl.java:755)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:370)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.resume(AbstractBundle.java:374)
+	at org.eclipse.osgi.framework.internal.core.Framework.resumeBundle(Framework.java:1067)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:561)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:546)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.incFWSL(StartLevelManager.java:459)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(StartLevelManager.java:243)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:440)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:227)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:337)
+Caused by: org.eclipse.osgi.service.pluginconversion.PluginConversionException: Could not find a META-INF/MANIFEST.MF, plugin.xml or a fragment.xml in D:\Android\software\eclipse\plugins\org.eclipse.wst.html.ui.infopop_1.0.200.v201004150328.jar.
+	at org.eclipse.core.runtime.internal.adaptor.PluginConverterImpl.fillPluginInfo(PluginConverterImpl.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.PluginConverterImpl.convertManifest(PluginConverterImpl.java:711)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseStorageHook.generateManifest(EclipseStorageHook.java:443)
+	... 33 more
+Caused by: java.util.zip.ZipException: error in opening zip file
+	at java.util.zip.ZipFile.open(Native Method)
+	at java.util.zip.ZipFile.<init>(Unknown Source)
+	at java.util.zip.ZipFile.<init>(Unknown Source)
+	at org.eclipse.core.runtime.internal.adaptor.PluginConverterImpl.findPluginManifest(PluginConverterImpl.java:179)
+	at org.eclipse.core.runtime.internal.adaptor.PluginConverterImpl.fillPluginInfo(PluginConverterImpl.java:108)
+	... 35 more
+Root exception:
+org.eclipse.osgi.service.pluginconversion.PluginConversionException: Could not find a META-INF/MANIFEST.MF, plugin.xml or a fragment.xml in D:\Android\software\eclipse\plugins\org.eclipse.wst.html.ui.infopop_1.0.200.v201004150328.jar.
+	at org.eclipse.core.runtime.internal.adaptor.PluginConverterImpl.fillPluginInfo(PluginConverterImpl.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.PluginConverterImpl.convertManifest(PluginConverterImpl.java:711)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseStorageHook.generateManifest(EclipseStorageHook.java:443)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseStorageHook.getGeneratedManifest0(EclipseStorageHook.java:423)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseStorageHook.getGeneratedManifest(EclipseStorageHook.java:393)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseStorageHook.createCachedManifest(EclipseStorageHook.java:388)
+	at org.eclipse.core.runtime.internal.adaptor.CachedManifest.getManifest(CachedManifest.java:42)
+	at org.eclipse.core.runtime.internal.adaptor.CachedManifest.get(CachedManifest.java:142)
+	at org.eclipse.osgi.framework.internal.core.ManifestLocalization.getResourceBundle(ManifestLocalization.java:95)
+	at org.eclipse.osgi.framework.internal.core.ManifestLocalization.getHeaders(ManifestLocalization.java:53)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getHeaders(AbstractBundle.java:954)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getHeaders(AbstractBundle.java:901)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.uninstallWorkerPrivileged(AbstractBundle.java:823)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle$4.run(AbstractBundle.java:770)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.uninstallWorker(AbstractBundle.java:794)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.uninstall(AbstractBundle.java:768)
+	at org.eclipse.equinox.internal.simpleconfigurator.ConfigApplier.uninstallBundles(ConfigApplier.java:357)
+	at org.eclipse.equinox.internal.simpleconfigurator.ConfigApplier.install(ConfigApplier.java:90)
+	at org.eclipse.equinox.internal.simpleconfigurator.SimpleConfiguratorImpl.applyConfiguration(SimpleConfiguratorImpl.java:129)
+	at org.eclipse.equinox.internal.simpleconfigurator.SimpleConfiguratorImpl.applyConfiguration(SimpleConfiguratorImpl.java:143)
+	at org.eclipse.equinox.internal.simpleconfigurator.Activator.start(Activator.java:48)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl$1.run(BundleContextImpl.java:783)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.startActivator(BundleContextImpl.java:774)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.start(BundleContextImpl.java:755)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:370)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.resume(AbstractBundle.java:374)
+	at org.eclipse.osgi.framework.internal.core.Framework.resumeBundle(Framework.java:1067)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:561)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:546)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.incFWSL(StartLevelManager.java:459)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(StartLevelManager.java:243)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:440)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:227)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:337)
+Caused by: java.util.zip.ZipException: error in opening zip file
+	at java.util.zip.ZipFile.open(Native Method)
+	at java.util.zip.ZipFile.<init>(Unknown Source)
+	at java.util.zip.ZipFile.<init>(Unknown Source)
+	at org.eclipse.core.runtime.internal.adaptor.PluginConverterImpl.findPluginManifest(PluginConverterImpl.java:179)
+	at org.eclipse.core.runtime.internal.adaptor.PluginConverterImpl.fillPluginInfo(PluginConverterImpl.java:108)
+	... 35 more
+
+!ENTRY org.eclipse.wst.html.ui.infopop 4 0 2013-07-17 12:27:46.726
+!MESSAGE 
+!STACK 0
+java.util.zip.ZipException: Exception in opening zip file: D:\Android\software\eclipse\plugins\org.eclipse.wst.html.ui.infopop_1.0.200.v201004150328.jar
+	at org.eclipse.osgi.framework.util.SecureAction.getZipFile(SecureAction.java:264)
+	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.basicOpen(ZipBundleFile.java:88)
+	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.getZipFile(ZipBundleFile.java:101)
+	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.checkedOpen(ZipBundleFile.java:74)
+	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.getEntry(ZipBundleFile.java:246)
+	at org.eclipse.osgi.baseadaptor.BaseData.getEntry0(BaseData.java:111)
+	at org.eclipse.osgi.baseadaptor.BaseData.getEntry(BaseData.java:102)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getEntry0(AbstractBundle.java:1236)
+	at org.eclipse.osgi.framework.internal.core.ManifestLocalization.findInResolved(ManifestLocalization.java:155)
+	at org.eclipse.osgi.framework.internal.core.ManifestLocalization.findResource(ManifestLocalization.java:149)
+	at org.eclipse.osgi.framework.internal.core.ManifestLocalization.getResourceBundle(ManifestLocalization.java:107)
+	at org.eclipse.osgi.framework.internal.core.ManifestLocalization.getHeaders(ManifestLocalization.java:53)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getHeaders(AbstractBundle.java:954)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getHeaders(AbstractBundle.java:901)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.uninstallWorkerPrivileged(AbstractBundle.java:823)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle$4.run(AbstractBundle.java:770)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.uninstallWorker(AbstractBundle.java:794)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.uninstall(AbstractBundle.java:768)
+	at org.eclipse.equinox.internal.simpleconfigurator.ConfigApplier.uninstallBundles(ConfigApplier.java:357)
+	at org.eclipse.equinox.internal.simpleconfigurator.ConfigApplier.install(ConfigApplier.java:90)
+	at org.eclipse.equinox.internal.simpleconfigurator.SimpleConfiguratorImpl.applyConfiguration(SimpleConfiguratorImpl.java:129)
+	at org.eclipse.equinox.internal.simpleconfigurator.SimpleConfiguratorImpl.applyConfiguration(SimpleConfiguratorImpl.java:143)
+	at org.eclipse.equinox.internal.simpleconfigurator.Activator.start(Activator.java:48)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl$1.run(BundleContextImpl.java:783)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.startActivator(BundleContextImpl.java:774)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.start(BundleContextImpl.java:755)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:370)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.resume(AbstractBundle.java:374)
+	at org.eclipse.osgi.framework.internal.core.Framework.resumeBundle(Framework.java:1067)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:561)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:546)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.incFWSL(StartLevelManager.java:459)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(StartLevelManager.java:243)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:440)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:227)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:337)
+Caused by: java.util.zip.ZipException: error in opening zip file
+	at java.util.zip.ZipFile.open(Native Method)
+	at java.util.zip.ZipFile.<init>(Unknown Source)
+	at java.util.zip.ZipFile.<init>(Unknown Source)
+	at org.eclipse.osgi.framework.util.SecureAction.getZipFile(SecureAction.java:251)
+	... 37 more
+
+!ENTRY org.eclipse.wst.html.ui.infopop 4 0 2013-07-17 12:27:46.727
+!MESSAGE 
+!STACK 0
+java.util.zip.ZipException: Exception in opening zip file: D:\Android\software\eclipse\plugins\org.eclipse.wst.html.ui.infopop_1.0.200.v201004150328.jar
+	at org.eclipse.osgi.framework.util.SecureAction.getZipFile(SecureAction.java:264)
+	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.basicOpen(ZipBundleFile.java:88)
+	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.getZipFile(ZipBundleFile.java:101)
+	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.checkedOpen(ZipBundleFile.java:74)
+	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.getEntry(ZipBundleFile.java:246)
+	at org.eclipse.osgi.baseadaptor.BaseData.getEntry0(BaseData.java:111)
+	at org.eclipse.osgi.baseadaptor.BaseData.getEntry(BaseData.java:102)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getEntry0(AbstractBundle.java:1236)
+	at org.eclipse.osgi.framework.internal.core.ManifestLocalization.findInResolved(ManifestLocalization.java:155)
+	at org.eclipse.osgi.framework.internal.core.ManifestLocalization.findResource(ManifestLocalization.java:149)
+	at org.eclipse.osgi.framework.internal.core.ManifestLocalization.getResourceBundle(ManifestLocalization.java:107)
+	at org.eclipse.osgi.framework.internal.core.ManifestLocalization.getHeaders(ManifestLocalization.java:53)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getHeaders(AbstractBundle.java:954)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getHeaders(AbstractBundle.java:901)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.uninstallWorkerPrivileged(AbstractBundle.java:823)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle$4.run(AbstractBundle.java:770)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.uninstallWorker(AbstractBundle.java:794)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.uninstall(AbstractBundle.java:768)
+	at org.eclipse.equinox.internal.simpleconfigurator.ConfigApplier.uninstallBundles(ConfigApplier.java:357)
+	at org.eclipse.equinox.internal.simpleconfigurator.ConfigApplier.install(ConfigApplier.java:90)
+	at org.eclipse.equinox.internal.simpleconfigurator.SimpleConfiguratorImpl.applyConfiguration(SimpleConfiguratorImpl.java:129)
+	at org.eclipse.equinox.internal.simpleconfigurator.SimpleConfiguratorImpl.applyConfiguration(SimpleConfiguratorImpl.java:143)
+	at org.eclipse.equinox.internal.simpleconfigurator.Activator.start(Activator.java:48)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl$1.run(BundleContextImpl.java:783)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.startActivator(BundleContextImpl.java:774)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.start(BundleContextImpl.java:755)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:370)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.resume(AbstractBundle.java:374)
+	at org.eclipse.osgi.framework.internal.core.Framework.resumeBundle(Framework.java:1067)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:561)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:546)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.incFWSL(StartLevelManager.java:459)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(StartLevelManager.java:243)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:440)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:227)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:337)
+Caused by: java.util.zip.ZipException: error in opening zip file
+	at java.util.zip.ZipFile.open(Native Method)
+	at java.util.zip.ZipFile.<init>(Unknown Source)
+	at java.util.zip.ZipFile.<init>(Unknown Source)
+	at org.eclipse.osgi.framework.util.SecureAction.getZipFile(SecureAction.java:251)
+	... 37 more
+
+!ENTRY org.eclipse.wst.html.ui.infopop 4 0 2013-07-17 12:27:46.728
+!MESSAGE 
+!STACK 0
+java.util.zip.ZipException: Exception in opening zip file: D:\Android\software\eclipse\plugins\org.eclipse.wst.html.ui.infopop_1.0.200.v201004150328.jar
+	at org.eclipse.osgi.framework.util.SecureAction.getZipFile(SecureAction.java:264)
+	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.basicOpen(ZipBundleFile.java:88)
+	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.getZipFile(ZipBundleFile.java:101)
+	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.checkedOpen(ZipBundleFile.java:74)
+	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.getEntry(ZipBundleFile.java:246)
+	at org.eclipse.osgi.baseadaptor.BaseData.getEntry0(BaseData.java:111)
+	at org.eclipse.osgi.baseadaptor.BaseData.getEntry(BaseData.java:102)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getEntry0(AbstractBundle.java:1236)
+	at org.eclipse.osgi.framework.internal.core.ManifestLocalization.findInResolved(ManifestLocalization.java:155)
+	at org.eclipse.osgi.framework.internal.core.ManifestLocalization.findResource(ManifestLocalization.java:149)
+	at org.eclipse.osgi.framework.internal.core.ManifestLocalization.getResourceBundle(ManifestLocalization.java:107)
+	at org.eclipse.osgi.framework.internal.core.ManifestLocalization.getHeaders(ManifestLocalization.java:53)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getHeaders(AbstractBundle.java:954)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getHeaders(AbstractBundle.java:901)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.uninstallWorkerPrivileged(AbstractBundle.java:823)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle$4.run(AbstractBundle.java:770)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.uninstallWorker(AbstractBundle.java:794)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.uninstall(AbstractBundle.java:768)
+	at org.eclipse.equinox.internal.simpleconfigurator.ConfigApplier.uninstallBundles(ConfigApplier.java:357)
+	at org.eclipse.equinox.internal.simpleconfigurator.ConfigApplier.install(ConfigApplier.java:90)
+	at org.eclipse.equinox.internal.simpleconfigurator.SimpleConfiguratorImpl.applyConfiguration(SimpleConfiguratorImpl.java:129)
+	at org.eclipse.equinox.internal.simpleconfigurator.SimpleConfiguratorImpl.applyConfiguration(SimpleConfiguratorImpl.java:143)
+	at org.eclipse.equinox.internal.simpleconfigurator.Activator.start(Activator.java:48)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl$1.run(BundleContextImpl.java:783)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.startActivator(BundleContextImpl.java:774)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.start(BundleContextImpl.java:755)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:370)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.resume(AbstractBundle.java:374)
+	at org.eclipse.osgi.framework.internal.core.Framework.resumeBundle(Framework.java:1067)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:561)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:546)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.incFWSL(StartLevelManager.java:459)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(StartLevelManager.java:243)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:440)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:227)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:337)
+Caused by: java.util.zip.ZipException: error in opening zip file
+	at java.util.zip.ZipFile.open(Native Method)
+	at java.util.zip.ZipFile.<init>(Unknown Source)
+	at java.util.zip.ZipFile.<init>(Unknown Source)
+	at org.eclipse.osgi.framework.util.SecureAction.getZipFile(SecureAction.java:251)
+	... 37 more
+
+!ENTRY org.eclipse.wst.html.ui.infopop 4 0 2013-07-17 12:27:46.728
+!MESSAGE 
+!STACK 0
+java.util.zip.ZipException: Exception in opening zip file: D:\Android\software\eclipse\plugins\org.eclipse.wst.html.ui.infopop_1.0.200.v201004150328.jar
+	at org.eclipse.osgi.framework.util.SecureAction.getZipFile(SecureAction.java:264)
+	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.basicOpen(ZipBundleFile.java:88)
+	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.getZipFile(ZipBundleFile.java:101)
+	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.checkedOpen(ZipBundleFile.java:74)
+	at org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.getEntry(ZipBundleFile.java:246)
+	at org.eclipse.osgi.baseadaptor.BaseData.getEntry0(BaseData.java:111)
+	at org.eclipse.osgi.baseadaptor.BaseData.getEntry(BaseData.java:102)
+	at org.eclipse.osgi.internal.baseadaptor.AdaptorUtil.loadManifestFrom(AdaptorUtil.java:187)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseStorageHook.getGeneratedManifest0(EclipseStorageHook.java:406)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseStorageHook.getGeneratedManifest(EclipseStorageHook.java:393)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseStorageHook.createCachedManifest(EclipseStorageHook.java:388)
+	at org.eclipse.core.runtime.internal.adaptor.CachedManifest.getManifest(CachedManifest.java:42)
+	at org.eclipse.core.runtime.internal.adaptor.CachedManifest.keys(CachedManifest.java:71)
+	at org.eclipse.osgi.framework.internal.core.ManifestLocalization.getHeaders(ManifestLocalization.java:57)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getHeaders(AbstractBundle.java:954)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getHeaders(AbstractBundle.java:901)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.uninstallWorkerPrivileged(AbstractBundle.java:823)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle$4.run(AbstractBundle.java:770)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.uninstallWorker(AbstractBundle.java:794)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.uninstall(AbstractBundle.java:768)
+	at org.eclipse.equinox.internal.simpleconfigurator.ConfigApplier.uninstallBundles(ConfigApplier.java:357)
+	at org.eclipse.equinox.internal.simpleconfigurator.ConfigApplier.install(ConfigApplier.java:90)
+	at org.eclipse.equinox.internal.simpleconfigurator.SimpleConfiguratorImpl.applyConfiguration(SimpleConfiguratorImpl.java:129)
+	at org.eclipse.equinox.internal.simpleconfigurator.SimpleConfiguratorImpl.applyConfiguration(SimpleConfiguratorImpl.java:143)
+	at org.eclipse.equinox.internal.simpleconfigurator.Activator.start(Activator.java:48)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl$1.run(BundleContextImpl.java:783)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.startActivator(BundleContextImpl.java:774)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.start(BundleContextImpl.java:755)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:370)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.resume(AbstractBundle.java:374)
+	at org.eclipse.osgi.framework.internal.core.Framework.resumeBundle(Framework.java:1067)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:561)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:546)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.incFWSL(StartLevelManager.java:459)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(StartLevelManager.java:243)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:440)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:227)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:337)
+Caused by: java.util.zip.ZipException: error in opening zip file
+	at java.util.zip.ZipFile.open(Native Method)
+	at java.util.zip.ZipFile.<init>(Unknown Source)
+	at java.util.zip.ZipFile.<init>(Unknown Source)
+	at org.eclipse.osgi.framework.util.SecureAction.getZipFile(SecureAction.java:251)
+	... 39 more
+
+!ENTRY org.eclipse.osgi 4 0 2013-07-17 12:27:46.729
+!MESSAGE Unexpected exception occurred loading manifest for bundle at the location: reference:file:plugins/org.eclipse.wst.html.ui.infopop_1.0.200.v201004150328.jar.
+!STACK 0
+org.osgi.framework.BundleException: Error converting plugin at D:\Android\software\eclipse\plugins\org.eclipse.wst.html.ui.infopop_1.0.200.v201004150328.jar.
+	at org.eclipse.core.runtime.internal.adaptor.EclipseStorageHook.generateManifest(EclipseStorageHook.java:446)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseStorageHook.getGeneratedManifest0(EclipseStorageHook.java:423)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseStorageHook.getGeneratedManifest(EclipseStorageHook.java:393)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseStorageHook.createCachedManifest(EclipseStorageHook.java:388)
+	at org.eclipse.core.runtime.internal.adaptor.CachedManifest.getManifest(CachedManifest.java:42)
+	at org.eclipse.core.runtime.internal.adaptor.CachedManifest.keys(CachedManifest.java:71)
+	at org.eclipse.osgi.framework.internal.core.ManifestLocalization.getHeaders(ManifestLocalization.java:57)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getHeaders(AbstractBundle.java:954)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getHeaders(AbstractBundle.java:901)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.uninstallWorkerPrivileged(AbstractBundle.java:823)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle$4.run(AbstractBundle.java:770)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.uninstallWorker(AbstractBundle.java:794)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.uninstall(AbstractBundle.java:768)
+	at org.eclipse.equinox.internal.simpleconfigurator.ConfigApplier.uninstallBundles(ConfigApplier.java:357)
+	at org.eclipse.equinox.internal.simpleconfigurator.ConfigApplier.install(ConfigApplier.java:90)
+	at org.eclipse.equinox.internal.simpleconfigurator.SimpleConfiguratorImpl.applyConfiguration(SimpleConfiguratorImpl.java:129)
+	at org.eclipse.equinox.internal.simpleconfigurator.SimpleConfiguratorImpl.applyConfiguration(SimpleConfiguratorImpl.java:143)
+	at org.eclipse.equinox.internal.simpleconfigurator.Activator.start(Activator.java:48)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl$1.run(BundleContextImpl.java:783)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.startActivator(BundleContextImpl.java:774)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.start(BundleContextImpl.java:755)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:370)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.resume(AbstractBundle.java:374)
+	at org.eclipse.osgi.framework.internal.core.Framework.resumeBundle(Framework.java:1067)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:561)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:546)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.incFWSL(StartLevelManager.java:459)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(StartLevelManager.java:243)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:440)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:227)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:337)
+Caused by: org.eclipse.osgi.service.pluginconversion.PluginConversionException: Could not find a META-INF/MANIFEST.MF, plugin.xml or a fragment.xml in D:\Android\software\eclipse\plugins\org.eclipse.wst.html.ui.infopop_1.0.200.v201004150328.jar.
+	at org.eclipse.core.runtime.internal.adaptor.PluginConverterImpl.fillPluginInfo(PluginConverterImpl.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.PluginConverterImpl.convertManifest(PluginConverterImpl.java:711)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseStorageHook.generateManifest(EclipseStorageHook.java:443)
+	... 32 more
+Caused by: java.util.zip.ZipException: error in opening zip file
+	at java.util.zip.ZipFile.open(Native Method)
+	at java.util.zip.ZipFile.<init>(Unknown Source)
+	at java.util.zip.ZipFile.<init>(Unknown Source)
+	at org.eclipse.core.runtime.internal.adaptor.PluginConverterImpl.findPluginManifest(PluginConverterImpl.java:179)
+	at org.eclipse.core.runtime.internal.adaptor.PluginConverterImpl.fillPluginInfo(PluginConverterImpl.java:108)
+	... 34 more
+Root exception:
+org.eclipse.osgi.service.pluginconversion.PluginConversionException: Could not find a META-INF/MANIFEST.MF, plugin.xml or a fragment.xml in D:\Android\software\eclipse\plugins\org.eclipse.wst.html.ui.infopop_1.0.200.v201004150328.jar.
+	at org.eclipse.core.runtime.internal.adaptor.PluginConverterImpl.fillPluginInfo(PluginConverterImpl.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.PluginConverterImpl.convertManifest(PluginConverterImpl.java:711)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseStorageHook.generateManifest(EclipseStorageHook.java:443)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseStorageHook.getGeneratedManifest0(EclipseStorageHook.java:423)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseStorageHook.getGeneratedManifest(EclipseStorageHook.java:393)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseStorageHook.createCachedManifest(EclipseStorageHook.java:388)
+	at org.eclipse.core.runtime.internal.adaptor.CachedManifest.getManifest(CachedManifest.java:42)
+	at org.eclipse.core.runtime.internal.adaptor.CachedManifest.keys(CachedManifest.java:71)
+	at org.eclipse.osgi.framework.internal.core.ManifestLocalization.getHeaders(ManifestLocalization.java:57)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getHeaders(AbstractBundle.java:954)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getHeaders(AbstractBundle.java:901)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.uninstallWorkerPrivileged(AbstractBundle.java:823)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle$4.run(AbstractBundle.java:770)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.uninstallWorker(AbstractBundle.java:794)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.uninstall(AbstractBundle.java:768)
+	at org.eclipse.equinox.internal.simpleconfigurator.ConfigApplier.uninstallBundles(ConfigApplier.java:357)
+	at org.eclipse.equinox.internal.simpleconfigurator.ConfigApplier.install(ConfigApplier.java:90)
+	at org.eclipse.equinox.internal.simpleconfigurator.SimpleConfiguratorImpl.applyConfiguration(SimpleConfiguratorImpl.java:129)
+	at org.eclipse.equinox.internal.simpleconfigurator.SimpleConfiguratorImpl.applyConfiguration(SimpleConfiguratorImpl.java:143)
+	at org.eclipse.equinox.internal.simpleconfigurator.Activator.start(Activator.java:48)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl$1.run(BundleContextImpl.java:783)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.startActivator(BundleContextImpl.java:774)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.start(BundleContextImpl.java:755)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:370)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.resume(AbstractBundle.java:374)
+	at org.eclipse.osgi.framework.internal.core.Framework.resumeBundle(Framework.java:1067)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:561)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:546)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.incFWSL(StartLevelManager.java:459)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(StartLevelManager.java:243)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:440)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:227)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:337)
+Caused by: java.util.zip.ZipException: error in opening zip file
+	at java.util.zip.ZipFile.open(Native Method)
+	at java.util.zip.ZipFile.<init>(Unknown Source)
+	at java.util.zip.ZipFile.<init>(Unknown Source)
+	at org.eclipse.core.runtime.internal.adaptor.PluginConverterImpl.findPluginManifest(PluginConverterImpl.java:179)
+	at org.eclipse.core.runtime.internal.adaptor.PluginConverterImpl.fillPluginInfo(PluginConverterImpl.java:108)
+	... 34 more
+
+!ENTRY org.eclipse.equinox.simpleconfigurator 4 0 2013-07-17 12:27:46.729
+!MESSAGE 
+!STACK 0
+org.osgi.framework.BundleException: Exception in org.eclipse.equinox.internal.simpleconfigurator.Activator.start() of bundle org.eclipse.equinox.simpleconfigurator.
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.startActivator(BundleContextImpl.java:806)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.start(BundleContextImpl.java:755)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:370)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.resume(AbstractBundle.java:374)
+	at org.eclipse.osgi.framework.internal.core.Framework.resumeBundle(Framework.java:1067)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:561)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:546)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.incFWSL(StartLevelManager.java:459)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(StartLevelManager.java:243)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:440)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:227)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:337)
+Caused by: java.lang.NullPointerException
+	at org.eclipse.core.runtime.internal.adaptor.CachedManifest.keys(CachedManifest.java:71)
+	at org.eclipse.osgi.framework.internal.core.ManifestLocalization.getHeaders(ManifestLocalization.java:57)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getHeaders(AbstractBundle.java:954)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getHeaders(AbstractBundle.java:901)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.uninstallWorkerPrivileged(AbstractBundle.java:823)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle$4.run(AbstractBundle.java:770)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.uninstallWorker(AbstractBundle.java:794)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.uninstall(AbstractBundle.java:768)
+	at org.eclipse.equinox.internal.simpleconfigurator.ConfigApplier.uninstallBundles(ConfigApplier.java:357)
+	at org.eclipse.equinox.internal.simpleconfigurator.ConfigApplier.install(ConfigApplier.java:90)
+	at org.eclipse.equinox.internal.simpleconfigurator.SimpleConfiguratorImpl.applyConfiguration(SimpleConfiguratorImpl.java:129)
+	at org.eclipse.equinox.internal.simpleconfigurator.SimpleConfiguratorImpl.applyConfiguration(SimpleConfiguratorImpl.java:143)
+	at org.eclipse.equinox.internal.simpleconfigurator.Activator.start(Activator.java:48)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl$1.run(BundleContextImpl.java:783)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.startActivator(BundleContextImpl.java:774)
+	... 11 more
+Root exception:
+java.lang.NullPointerException
+	at org.eclipse.core.runtime.internal.adaptor.CachedManifest.keys(CachedManifest.java:71)
+	at org.eclipse.osgi.framework.internal.core.ManifestLocalization.getHeaders(ManifestLocalization.java:57)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getHeaders(AbstractBundle.java:954)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.getHeaders(AbstractBundle.java:901)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.uninstallWorkerPrivileged(AbstractBundle.java:823)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle$4.run(AbstractBundle.java:770)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.uninstallWorker(AbstractBundle.java:794)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.uninstall(AbstractBundle.java:768)
+	at org.eclipse.equinox.internal.simpleconfigurator.ConfigApplier.uninstallBundles(ConfigApplier.java:357)
+	at org.eclipse.equinox.internal.simpleconfigurator.ConfigApplier.install(ConfigApplier.java:90)
+	at org.eclipse.equinox.internal.simpleconfigurator.SimpleConfiguratorImpl.applyConfiguration(SimpleConfiguratorImpl.java:129)
+	at org.eclipse.equinox.internal.simpleconfigurator.SimpleConfiguratorImpl.applyConfiguration(SimpleConfiguratorImpl.java:143)
+	at org.eclipse.equinox.internal.simpleconfigurator.Activator.start(Activator.java:48)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl$1.run(BundleContextImpl.java:783)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.startActivator(BundleContextImpl.java:774)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.start(BundleContextImpl.java:755)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:370)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.resume(AbstractBundle.java:374)
+	at org.eclipse.osgi.framework.internal.core.Framework.resumeBundle(Framework.java:1067)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:561)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.resumeBundles(StartLevelManager.java:546)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.incFWSL(StartLevelManager.java:459)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.doSetStartLevel(StartLevelManager.java:243)
+	at org.eclipse.osgi.framework.internal.core.StartLevelManager.dispatchEvent(StartLevelManager.java:440)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:227)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:337)
+
+!ENTRY org.eclipse.osgi 4 0 2013-07-17 12:27:46.918
+!MESSAGE Bundle org.eclipse.equinox.simpleconfigurator_1.0.200.v20100503 [1] is not active.
+
+!ENTRY org.eclipse.jface 2 0 2013-07-17 12:28:27.595
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-07-17 12:28:27.595
+!MESSAGE A conflict occurred for ALT+CTRL+R:
+Binding(ALT+CTRL+R,
+	ParameterizedCommand(Command(edu.hawaii.ics.csdl.jupiter.ui.command.ReviewAdditionActionDelegate,Add Review Issue,
+		,
+		Category(edu.hawaii.ics.csdl.jupiter.ui.commands.category,Jupiter,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+CTRL+R,
+	ParameterizedCommand(Command(org.python.pydev.debug.setnext,Set Next Statement,
+		,
+		Category(org.python.pydev.ui.category.run,PyDev - Run,Python run category,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.ui.workbench 2 0 2013-07-17 12:28:27.631
+!MESSAGE A handler conflict occurred.  This may disable some commands.
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2013-07-17 12:28:27.631
+!MESSAGE Conflict for 'AUTOGEN:::org.eclipse.ui.cheatsheets.actionSet/org.eclipse.ui.cheatsheets.actions.CheatSheetHelpMenuAction':
+HandlerActivation(commandId=AUTOGEN:::org.eclipse.ui.cheatsheets.actionSet/org.eclipse.ui.cheatsheets.actions.CheatSheetHelpMenuAction,
+	handler=ActionDelegateHandlerProxy(null,org.eclipse.ui.cheatsheets.CheatSheetExtensionFactory:helpMenuAction),
+	expression=AndExpression(ActionSetExpression(org.eclipse.ui.cheatsheets.actionSet,org.eclipse.ui.internal.WorkbenchWindow@12cd8d4),WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@12cd8d4)),sourcePriority=16640)
+HandlerActivation(commandId=AUTOGEN:::org.eclipse.ui.cheatsheets.actionSet/org.eclipse.ui.cheatsheets.actions.CheatSheetHelpMenuAction,
+	handler=ActionDelegateHandlerProxy(null,org.eclipse.ui.cheatsheets.CheatSheetExtensionFactory:helpMenuAction),
+	expression=AndExpression(ActionSetExpression(org.eclipse.ui.cheatsheets.actionSet,org.eclipse.ui.internal.WorkbenchWindow@12cd8d4),WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@12cd8d4)),sourcePriority=16640)
+
+!ENTRY edu.hawaii.ics.csdl.jupiter 1 0 2013-07-17 12:28:28.578
+!MESSAGE Jupiter Review Plugin is up.

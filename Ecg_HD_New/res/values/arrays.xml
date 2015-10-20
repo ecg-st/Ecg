@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="lead_choose_items">
+        <item>肢体导联</item>
+        <item>模拟肢体导联</item>
+        <item>模拟胸导联</item>  
+        <item>简易肢体导联</item>  
+    </string-array>
+    
+    <string-array name="mode_choose_items">
+        <item>采集模式</item>
+        <item>回放模式</item>
+        <item>演示模式</item>
+    </string-array>
+    
+    <string-array name="string_ecg_patient_result" translatable="false">
+        <item>心动过缓</item>
+        <item>窦性心动过速</item>
+        <item>窦性停搏</item>
+        <item>漏搏</item>
+        <item>房性早搏</item>
+        <item>室性早搏</item>
+        <item>室速</item>
+        <item>RonT</item>
+        <item>室性扑动</item>
+        <item>间外性期外收缩</item>
+        <item>窦性心律不齐</item>       
+        <item>QRS宽度异常</item>
+        <item>QRS连续增宽</item>
+        <item></item>
+    </string-array> 
+    
+    <string-array name="demo_data_name">
+        <item>窦性心动过速.raw</item>
+        <item>窦性心律不齐.raw</item>
+        <item>房性早搏.raw</item>
+        <item>室性早搏.raw</item>
+        <item>室性早搏2.raw</item>
+        <item>窦性心动过缓.raw</item>
+        <item>正常窦性心律.raw</item>
+    </string-array>
+</resources>

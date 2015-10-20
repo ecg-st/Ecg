@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center"
+    android:orientation="vertical" >
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/WHITE"
+            android:gravity="center_horizontal"
+            android:text="@string/title_string"
+            android:textSize="36sp" />
+
+        <ImageView
+            android:id="@+id/ecgpic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:layout_marginTop="20dip"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/ecg_pic"
+            android:background="@drawable/ecg_pic_bg"/>
+
+        <!-- <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="bottom"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="60dip"
+                android:layout_gravity="bottom"
+                android:orientation="horizontal" >
+
+                <Button
+                    android:id="@+id/start_collect_button"
+                    android:layout_width="0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:paddingLeft="20dip"
+                    android:paddingRight="20dip"
+                    android:paddingTop="10dip"
+                    android:text="Start Collect" />
+
+                <Button
+                    android:id="@+id/view_record_button"
+                    android:layout_width="0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:paddingLeft="20dip"
+                    android:paddingRight="20dip"
+                    android:paddingTop="10dip"
+                    android:text="View Record" />
+            </LinearLayout>
+        </LinearLayout> -->
+</LinearLayout>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">心电仪</string>
+    <string name="wave_settings_menu">导联系统设置</string>
+    <string name="bluetooth_match_menu">蓝牙配对</string>
+    <string name="wave_knowledge_menu">心电知识库</string>
+    <string name="emergent_call_menu">紧急电话</string>
+    <string name="quit_menu">退出</string>
+    <string name="switch_lead_menu">切换导联</string>
+    <string name="data_transfer">数据发送</string>
+    <string name="ok_btn_txt">确定</string>
+    <string name="cancel_btn_txt">取消</string>
+    <string name="history_data_btn_txt">数据管理</string>
+    <string name="example_data_btn_txt">演示数据</string>
+    <string name="mode_switch_btn_txt">模式切换</string>
+    <string name="show_demo_btn_txt">演示</string>
+    <string name="view_detail_btn_txt">相关知识</string>
+    <string name="bluetooth_not_availble">蓝牙设备不可用！</string>
+    <string name="location_error">获取地址位置失败！</string>
+    <string name="record_start">采集</string>
+    <string name="replay_start">回放</string>
+    <string name="show_start">演示</string>
+    <string name="stop_btn_txt">停止</string>
+    <string name="diagnose_result">检测报告</string>
+    <string name="replay_btn_txt">回放</string>
+    <string name="last_time">本次检测持续时间：%1$ss</string>
+    <string name="abnormal_result">共检测到下列异常：</string>
+    <string name="none">无</string>
+    <string name="conclusion">结论：</string>
+    <string name="delete_btn_txt">删除</string>
+    <string name="collect_record_list">采集记录列表</string>
+    <string name="dialog_title">提示</string>
+    <string name="delete_dialog_message">你确定要删除此条记录？</string>
+    <string name="file_not_exist">数据文件已被删除！</string>
+    <string name="no_latest_data">没有最新数据！</string>
+    <string name="latest_data_file_deleted">%1$s采集的数据文件已被删除，是否删除此条记录？</string>
+    <string name="no_collect_record">没有数据！</string>
+    <string name="pause_btn_txt">暂停</string>
+    <string name="goon_btn_txt">继续</string>
+    <string name="question_mark">？</string>
+    <string name="title_string">德尔福\n实时心律监测分析仪V1.0</string>
+    <string name="diagnose_conclusion">稍有异常，建议至医院做进一步检查，以防患于未然。</string>
+    <string name="none_diagnose_conclusion">未检测到任何异常信息。</string>
+    <string name="zoom_btn_txt">放大</string>
+    <string name="unknown">未知</string>
+    <string name="dot_graph">散点图</string>
+    <string name="skip_btn_txt">跳过</string>
+    <string name="title_connected_to">已连接: </string>
+    <string name="title_connecting">正在连接...</string>
+    <string name="title_not_connected">无法连接</string>
+    <string name="bt_not_enabled_leaving">蓝牙设备不可用.</string>
+    <string name="report_file_name">文件名：</string>
+    <string name="report_remark">备注：</string>
+    <string name="bt_device_lost">蓝牙设备连接丢失, 正在尝试重连...</string>
+    <string name="back_btn_txt">回退</string>
+    <string name="retry_btn_txt">重试</string>
+    <string name="record_exist">该条记录已存在！</string>
+    <string name="upload_data">上传数据</string>
+    
+    <string name="string_settings">系统设置</string>
+    <string name="heart_rate_text">心率</string>
+    
+    <!--  DeviceListActivity -->
+    <string name="title_paired_devices">已配对的设备列表</string>
+    <string name="title_other_devices">其他可用的设备</string>
+    <string name="button_scan">蓝牙设备扫描</string>
+    <string name="select_device">选择一个需要连接的设备</string>
+    <string name="none_paired">没有已配对的蓝牙设备</string>
+    <string name="scanning">正在扫描设备...</string>
+    <string name="none_found">没有找到任何设备</string>
+    <string name="diagnose_result_title">诊断报告</string>
+    
+    <!--Settings -->
+    <string name="preferences_data_source_title">"数据来源"</string>
+    <string name="preferences_data_source_summary">"根据使用情况, 请设置心电数据来源"</string>
+    <string name="preferences_data_file_title">"数据文件"</string>
+    <string name="preferences_data_file_summary">"根据使用情况, 请选择文件"</string>
+    <string name="preferences_lead_source_title">导联系统选择</string>
+    <string name="preferences_lead_source_summary">根据硬件连接选择导联设置</string>
+    <string name="settings">设置</string>
+    <!-- About -->
+    <string name="menu_about">"版本"</string>
+    <string name="version_msg">版本：</string>
+    <string name="app_about_msg">常州德尔福科技 v1.0</string>
+    <string name="app_about_title">"关于..."</string>
+    <string name="ok">确定</string>
+    <string name="cancel">取消</string>
+    
+    <string name="cancel_active">取消实时</string>
+    <string name="start_active">激活实时</string>
+    <string name="login_please">请先登录</string>
+    <string name="name_pass_empty">用户名或密码不能为空</string>
+    <string name="logining_wait">正在登录, 请稍候...</string>
+    <string name="login_success">登录成功</string>
+    <string name="account_pass_error">用户名密码错误或该用户不存在</string>
+    <string name="power_disbale">用户登录权限不足</string>
+    <string name="no_sufficent_funds">用户欠费</string>
+    <string name="server_connect_failure">服务器连接失败</string>
+    <string name="login_faliure">登录失败</string>
+    <string name="send_mode">发送模式</string>
+    <string name="send_failure">发送失败</string>
+    <string name="send_success">发送成功</string>
+    <string name="data_uploading">数据上传中...</string>
+    <string name="real_time_display">实时显示</string>
+    <string name="time_display">分时显示</string>
+    <string name="wait_30_seconds">请耐心等待20秒，测试时保持安静放松！</string>
+    <string name="count_down">倒计时:</string>
+    <string name="bluetooth_match_success">蓝牙匹配成功</string>
+    <string name="wave_small_or_exception">波形幅度过小或其它异常</string>
+    <string name="user_name">用户名:</string>
+    <string name="password">密    码:</string>
+    <string name="user_login">用户登录</string>
+    <string name="user_logout">注销登录</string>
+    <string name="send_by_hand">手动发送</string>
+    <string name="mv_per_rect">1格/mV</string>
+    <string name="s_per_rect">2.5格/s</string>
+    <string name="heart_exception_graph">心率变异散点图</string>
+    <string name="rr_graph">RR间期散点图</string>
+    <string name="collect_time">采集时间：</string>
+    
+    <!-- added by zhf 20151005 -->
+    <string formatted="false" name="tts_toast_format">缓冲进度为%d%%，播放进度为%d%%</string>
+</resources>
