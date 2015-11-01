@@ -118,15 +118,15 @@ public class ZoomEcgDrawView extends View
     private Paint textPaint1 = new Paint();
     private Paint textPaint2 = new Paint();
     /** 波形Y轴放大倍数调节系数 (by Huo)*/
-    public static final double Y_AMPLIFIER1 = 1.1; //for I, MI
-    public static final double Y_AMPLIFIER2 = 1.1; //for II,MII
-    public static final double Y_AMPLIFIER3 = 1.1; //for III, MIII
-    public static final double Y_AMPLIFIER4 = 1.1; //for aVR, MaVR
-    public static final double Y_AMPLIFIER5 = 1.1; //for aVL, MaVL
-    public static final double Y_AMPLIFIER6 = 1.1; //for aVF, MaVF
-    public static final double Y_AMPLIFIER7 = 1.1; //for MV1
-    public static final double Y_AMPLIFIER8 = 1.1; //for MV5
-    public static final double Y_AMPLIFIER9 = 1.1; //for simp
+    public static final double Y_AMPLIFIER1 = 0.75; //for I, MI
+    public static final double Y_AMPLIFIER2 = 0.75; //for II,MII
+    public static final double Y_AMPLIFIER3 = 0.75; //for III, MIII
+    public static final double Y_AMPLIFIER4 = 0.75; //for aVR, MaVR
+    public static final double Y_AMPLIFIER5 = 0.75; //for aVL, MaVL
+    public static final double Y_AMPLIFIER6 = 0.75; //for aVF, MaVF
+    public static final double Y_AMPLIFIER7 = 0.75; //for MV1
+    public static final double Y_AMPLIFIER8 = 0.75; //for MV5
+    public static final double Y_AMPLIFIER9 = 0.75; //for simp
     /**波形Y轴偏移量微调 (by Huo)*/
     public static final int Y_TUNING1 = 4; //for I, MI
     public static final int Y_TUNING2 = 27; //for II,MII
@@ -258,25 +258,25 @@ public class ZoomEcgDrawView extends View
 
             // Draw II
             oldX = EcgConst.DISPLAY_LEFT_LEAD_NUMBER_WIDTH;
-            oldY = (int) ((CENTER_Y_CH * 6 - Y_AMPLIFIER2 * displayDataCh2[0] + Y_TUNING2) * zoomRate);
+            oldY = (int) ((CENTER_Y_CH * 5.5 - Y_AMPLIFIER2 * displayDataCh2[0] + Y_TUNING2) * zoomRate);
             newY = 0;
             if (displayDataCh1[EcgConst.WAVE_DEVIATION_VALUE] != -1)
             {
-                canvas.drawText("Ⅱ", TEXT_X_OFFSET, CENTER_Y_CH * 5 * zoomRate, textPaint1);
+                canvas.drawText("Ⅱ", TEXT_X_OFFSET, (int)(CENTER_Y_CH * 4.5 * zoomRate), textPaint1);
             }
             for (int i = 0; i < updateCh1DataIndex + EcgConst.WAVE_DEVIATION_VALUE; i++)
             {
-                newY = (int) ((CENTER_Y_CH * 10 - Y_AMPLIFIER2 * displayDataCh2[i] + Y_TUNING2) * zoomRate);
+                newY = (int) ((CENTER_Y_CH * 9.5 - Y_AMPLIFIER2 * displayDataCh2[i] + Y_TUNING2) * zoomRate);
                 
                 if ((i >= 0 && i < EcgConst.WAVE_DEVIATION_VALUE_PART1)
                     || (i >= EcgConst.WAVE_DEVIATION_VALUE_PART2 && i < EcgConst.WAVE_DEVIATION_VALUE))
                 {
-                    newY = CENTER_Y_CH * 6 * zoomRate;
+                    newY = (int)(CENTER_Y_CH * 5.5 * zoomRate);
                 }
                 else if (i >= EcgConst.WAVE_DEVIATION_VALUE_PART1
                     && i <= EcgConst.WAVE_DEVIATION_VALUE_PART2)
                 {
-                    newY = (CENTER_Y_CH * 6 - EcgConst.GRID_WIDTH) * zoomRate;
+                    newY = (int)((CENTER_Y_CH * 5.5 - EcgConst.GRID_WIDTH) * zoomRate);
                 }
                 
                 if (displayDataCh1[EcgConst.WAVE_DEVIATION_VALUE] == -1 || (i > EcgConst.WAVE_DEVIATION_VALUE && displayDataCh1[i] == -1))
@@ -310,25 +310,25 @@ public class ZoomEcgDrawView extends View
 
             // Draw III
             oldX = EcgConst.DISPLAY_LEFT_LEAD_NUMBER_WIDTH;
-            oldY = (int) ((CENTER_Y_CH * 10 - Y_AMPLIFIER3 * displayDataCh1[0] + Y_TUNING3) * zoomRate);
+            oldY = (int) ((CENTER_Y_CH * 9 - Y_AMPLIFIER3 * displayDataCh1[0] + Y_TUNING3) * zoomRate);
             newY = 0;
             if (displayDataCh1[EcgConst.WAVE_DEVIATION_VALUE] != -1)
             {
-                canvas.drawText("Ⅲ", TEXT_X_OFFSET, CENTER_Y_CH * 9 * zoomRate, textPaint2);
+                canvas.drawText("Ⅲ", TEXT_X_OFFSET, CENTER_Y_CH * 8 * zoomRate, textPaint2);
             }
             for (int i = 0; i < updateCh1DataIndex + EcgConst.WAVE_DEVIATION_VALUE; i++)
             {
-                newY = (int) ((CENTER_Y_CH * 14 - Y_AMPLIFIER3 * displayDataCh1[i] + Y_TUNING3) * zoomRate);
+                newY = (int) ((CENTER_Y_CH * 13 - Y_AMPLIFIER3 * displayDataCh1[i] + Y_TUNING3) * zoomRate);
 
                 if ((i >= 0 && i < EcgConst.WAVE_DEVIATION_VALUE_PART1)
                     || (i >= EcgConst.WAVE_DEVIATION_VALUE_PART2 && i < EcgConst.WAVE_DEVIATION_VALUE))
                 {
-                    newY = CENTER_Y_CH * 10 * zoomRate;
+                    newY = CENTER_Y_CH * 9 * zoomRate;
                 }
                 else if (i >= EcgConst.WAVE_DEVIATION_VALUE_PART1
                     && i <= EcgConst.WAVE_DEVIATION_VALUE_PART2)
                 {
-                    newY = (CENTER_Y_CH * 10 - EcgConst.GRID_WIDTH) * zoomRate;
+                    newY = (CENTER_Y_CH * 9 - EcgConst.GRID_WIDTH) * zoomRate;
                 }
                 
                 if (displayDataCh1[EcgConst.WAVE_DEVIATION_VALUE] == -1 || (i > EcgConst.WAVE_DEVIATION_VALUE && displayDataCh1[i] == -1))
@@ -364,11 +364,11 @@ public class ZoomEcgDrawView extends View
         {
             // Draw AVR
             oldX = EcgConst.DISPLAY_LEFT_LEAD_NUMBER_WIDTH;
-            oldY = (int) ((CENTER_Y_CH * 2 - Y_AMPLIFIER4 * (displayDataCh1[0] - 2 * displayDataCh2[0]) / 2 + Y_TUNING4) * zoomRate);
+            oldY = (int) ((CENTER_Y_CH * 3 - Y_AMPLIFIER4 * (displayDataCh1[0] - 2 * displayDataCh2[0]) / 2 + Y_TUNING4) * zoomRate);
             newY = 0;
             if (displayDataCh1[EcgConst.WAVE_DEVIATION_VALUE] != -1)
             {
-                canvas.drawText("aVR", TEXT_X_OFFSET, CENTER_Y_CH * zoomRate, textPaint0);
+                canvas.drawText("aVR", TEXT_X_OFFSET, CENTER_Y_CH * 2 * zoomRate, textPaint0);
             }
             for (int i = 0; i < updateCh1DataIndex + EcgConst.WAVE_DEVIATION_VALUE; i++)
             {
@@ -377,12 +377,12 @@ public class ZoomEcgDrawView extends View
                 if ((i >= 0 && i < EcgConst.WAVE_DEVIATION_VALUE_PART1)
                     || (i >= EcgConst.WAVE_DEVIATION_VALUE_PART2 && i < EcgConst.WAVE_DEVIATION_VALUE))
                 {
-                    newY = CENTER_Y_CH * 2 * zoomRate;
+                    newY = CENTER_Y_CH * 3 * zoomRate;
                 }
                 else if (i >= EcgConst.WAVE_DEVIATION_VALUE_PART1
                     && i <= EcgConst.WAVE_DEVIATION_VALUE_PART2)
                 {
-                    newY = (CENTER_Y_CH * 2 - EcgConst.GRID_WIDTH) * zoomRate;
+                    newY = (CENTER_Y_CH * 3 - EcgConst.GRID_WIDTH) * zoomRate;
                 }
                 
                 if (displayDataCh1[EcgConst.WAVE_DEVIATION_VALUE] == -1 || (i > EcgConst.WAVE_DEVIATION_VALUE && displayDataCh1[i] == -1))
@@ -415,25 +415,25 @@ public class ZoomEcgDrawView extends View
             }
             // Draw AVL
             oldX = EcgConst.DISPLAY_LEFT_LEAD_NUMBER_WIDTH;
-            oldY = (int) ((CENTER_Y_CH * 6 - Y_AMPLIFIER5 * (displayDataCh2[0] - 2 * displayDataCh1[0]) / 2 + Y_TUNING5) * zoomRate);
+            oldY = (int) ((CENTER_Y_CH * 5.5 - Y_AMPLIFIER5 * (displayDataCh2[0] - 2 * displayDataCh1[0]) / 2 + Y_TUNING5) * zoomRate);
             newY = 0;
             if (displayDataCh1[EcgConst.WAVE_DEVIATION_VALUE] != -1)
             {
-                canvas.drawText("aVL", TEXT_X_OFFSET, CENTER_Y_CH * 5 * zoomRate, textPaint1);
+                canvas.drawText("aVL", TEXT_X_OFFSET, (int)(CENTER_Y_CH * 4.5 * zoomRate), textPaint1);
             }
             for (int i = 0; i < updateCh1DataIndex + EcgConst.WAVE_DEVIATION_VALUE; i++)
             {
-                newY = (int) ((CENTER_Y_CH * 4 - Y_AMPLIFIER5 * (displayDataCh2[i] - 2 * displayDataCh1[i]) / 2 + Y_TUNING5) * zoomRate);
+                newY = (int) ((CENTER_Y_CH * 3.5 - Y_AMPLIFIER5 * (displayDataCh2[i] - 2 * displayDataCh1[i]) / 2 + Y_TUNING5) * zoomRate);
 
                 if ((i >= 0 && i < EcgConst.WAVE_DEVIATION_VALUE_PART1)
                     || (i >= EcgConst.WAVE_DEVIATION_VALUE_PART2 && i < EcgConst.WAVE_DEVIATION_VALUE))
                 {
-                    newY = CENTER_Y_CH * 6 * zoomRate;
+                    newY = (int)(CENTER_Y_CH * 5.5 * zoomRate);
                 }
                 else if (i >= EcgConst.WAVE_DEVIATION_VALUE_PART1
                     && i <= EcgConst.WAVE_DEVIATION_VALUE_PART2)
                 {
-                    newY = (CENTER_Y_CH * 6 - EcgConst.GRID_WIDTH) * zoomRate;
+                    newY = (int)((CENTER_Y_CH * 5.5 - EcgConst.GRID_WIDTH) * zoomRate);
                 }
                 
                 if (displayDataCh1[EcgConst.WAVE_DEVIATION_VALUE] == -1 || (i > EcgConst.WAVE_DEVIATION_VALUE && displayDataCh1[i] == -1))
@@ -466,25 +466,25 @@ public class ZoomEcgDrawView extends View
             }
             // Draw AVF
             oldX = EcgConst.DISPLAY_LEFT_LEAD_NUMBER_WIDTH;
-            oldY = (int) ((CENTER_Y_CH * 10 - Y_AMPLIFIER6 * (displayDataCh1[0] + displayDataCh2[0]) / 2 + Y_TUNING6) * zoomRate);
+            oldY = (int) ((CENTER_Y_CH * 9 - Y_AMPLIFIER6 * (displayDataCh1[0] + displayDataCh2[0]) / 2 + Y_TUNING6) * zoomRate);
             newY = 0;
             if (displayDataCh1[EcgConst.WAVE_DEVIATION_VALUE] != -1)
             {
-                canvas.drawText("aVF", TEXT_X_OFFSET, CENTER_Y_CH * 9 * zoomRate, textPaint2);
+                canvas.drawText("aVF", TEXT_X_OFFSET, CENTER_Y_CH * 8 * zoomRate, textPaint2);
             }
             for (int i = 0; i < updateCh1DataIndex + EcgConst.WAVE_DEVIATION_VALUE; i++)
             {
-                newY = (int) ((CENTER_Y_CH * 14 - Y_AMPLIFIER6 * (displayDataCh1[i] + displayDataCh2[i]) / 2 + Y_TUNING6) * zoomRate);
+                newY = (int) ((CENTER_Y_CH * 13 - Y_AMPLIFIER6 * (displayDataCh1[i] + displayDataCh2[i]) / 2 + Y_TUNING6) * zoomRate);
 
                 if ((i >= 0 && i < EcgConst.WAVE_DEVIATION_VALUE_PART1)
                     || (i >= EcgConst.WAVE_DEVIATION_VALUE_PART2 && i < EcgConst.WAVE_DEVIATION_VALUE))
                 {
-                    newY = CENTER_Y_CH * 10 * zoomRate;
+                    newY = CENTER_Y_CH * 9 * zoomRate;
                 }
                 else if (i >= EcgConst.WAVE_DEVIATION_VALUE_PART1
                     && i <= EcgConst.WAVE_DEVIATION_VALUE_PART2)
                 {
-                    newY = (CENTER_Y_CH * 10 - EcgConst.GRID_WIDTH) * zoomRate;
+                    newY = (CENTER_Y_CH * 9 - EcgConst.GRID_WIDTH) * zoomRate;
                 }
                 
                 if (displayDataCh1[EcgConst.WAVE_DEVIATION_VALUE] == -1 || (i > EcgConst.WAVE_DEVIATION_VALUE && displayDataCh1[i] == -1))
@@ -885,28 +885,28 @@ public class ZoomEcgDrawView extends View
 
         // Draw MV1
         oldX = EcgConst.DISPLAY_LEFT_LEAD_NUMBER_WIDTH;
-        oldY = (int) ((CENTER_Y_CH * 4 - Y_AMPLIFIER7 * displayDataCh1[0] + Y_TUNING7) * zoomRate);
+        oldY = (int) ((CENTER_Y_CH * 3 - Y_AMPLIFIER7 * displayDataCh1[0] + Y_TUNING7) * zoomRate);
         newY = 0;
         if (displayDataCh1[EcgConst.WAVE_DEVIATION_VALUE] != -1)
         {
             canvas.drawText("MV1",
                 TEXT_X_OFFSET,
-                CENTER_Y_CH * 3 * zoomRate,
+                CENTER_Y_CH * 2 * zoomRate,
                 textPaint1);
         }
         for (int i = 0; i < updateCh1DataIndex + EcgConst.WAVE_DEVIATION_VALUE; i++)
         {
-            newY = (int) ((CENTER_Y_CH * 8 - Y_AMPLIFIER7 * displayDataCh1[i] + Y_TUNING7) * zoomRate);
+            newY = (int) ((CENTER_Y_CH * 7 - Y_AMPLIFIER7 * displayDataCh1[i] + Y_TUNING7) * zoomRate);
 
             if ((i >= 0 && i < EcgConst.WAVE_DEVIATION_VALUE_PART1)
                 || (i >= EcgConst.WAVE_DEVIATION_VALUE_PART2 && i < EcgConst.WAVE_DEVIATION_VALUE))
             {
-                newY = CENTER_Y_CH * 4 * zoomRate;
+                newY = CENTER_Y_CH * 3 * zoomRate;
             }
             else if (i >= EcgConst.WAVE_DEVIATION_VALUE_PART1
                 && i <= EcgConst.WAVE_DEVIATION_VALUE_PART2)
             {
-                newY = (CENTER_Y_CH * 4 - EcgConst.GRID_WIDTH) * zoomRate;
+                newY = (CENTER_Y_CH * 3 - EcgConst.GRID_WIDTH) * zoomRate;
             }
 
             if (displayDataCh1[EcgConst.WAVE_DEVIATION_VALUE] == -1
@@ -942,28 +942,28 @@ public class ZoomEcgDrawView extends View
 
         // Draw MV5
         oldX = EcgConst.DISPLAY_LEFT_LEAD_NUMBER_WIDTH;
-        oldY = (int) ((CENTER_Y_CH * 8 - Y_AMPLIFIER8 * displayDataCh2[0] + Y_TUNING8) * zoomRate);
+        oldY = (int) ((CENTER_Y_CH * 7 - Y_AMPLIFIER8 * displayDataCh2[0] + Y_TUNING8) * zoomRate);
         newY = 0;
         if (displayDataCh1[EcgConst.WAVE_DEVIATION_VALUE] != -1)
         {
             canvas.drawText("MV5",
                 TEXT_X_OFFSET,
-                CENTER_Y_CH * 7 * zoomRate,
+                CENTER_Y_CH * 6 * zoomRate,
                 textPaint2);
         }
         for (int i = 0; i < updateCh1DataIndex + EcgConst.WAVE_DEVIATION_VALUE; i++)
         {
-            newY = (int) ((CENTER_Y_CH * 12 - Y_AMPLIFIER8 * displayDataCh2[i] + Y_TUNING8) * zoomRate);
+            newY = (int) ((CENTER_Y_CH * 11 - Y_AMPLIFIER8 * displayDataCh2[i] + Y_TUNING8) * zoomRate);
 
             if ((i >= 0 && i < EcgConst.WAVE_DEVIATION_VALUE_PART1)
                 || (i >= EcgConst.WAVE_DEVIATION_VALUE_PART2 && i < EcgConst.WAVE_DEVIATION_VALUE))
             {
-                newY = CENTER_Y_CH * 8 * zoomRate;
+                newY = CENTER_Y_CH * 7 * zoomRate;
             }
             else if (i >= EcgConst.WAVE_DEVIATION_VALUE_PART1
                 && i <= EcgConst.WAVE_DEVIATION_VALUE_PART2)
             {
-                newY = (CENTER_Y_CH * 8 - EcgConst.GRID_WIDTH) * zoomRate;
+                newY = (CENTER_Y_CH * 7 - EcgConst.GRID_WIDTH) * zoomRate;
             }
 
             if (displayDataCh1[EcgConst.WAVE_DEVIATION_VALUE] == -1
@@ -1009,21 +1009,21 @@ public class ZoomEcgDrawView extends View
 
         // Draw II
         oldX = EcgConst.DISPLAY_LEFT_LEAD_NUMBER_WIDTH;
-        oldY = (int) ((CENTER_Y_CH * 6 - Y_AMPLIFIER9 * displayDataCh2[0] + Y_TUNING9) * zoomRate);
+        oldY = (int) ((CENTER_Y_CH * 3.5 - Y_AMPLIFIER9 * displayDataCh2[0] + Y_TUNING9) * zoomRate);
         newY = 0;
         for (int i = 0; i < updateCh1DataIndex + EcgConst.WAVE_DEVIATION_VALUE; i++)
         {
-            newY = (int) ((CENTER_Y_CH * 10 - Y_AMPLIFIER9 * displayDataCh2[i] + Y_TUNING9) * zoomRate);
+            newY = (int) ((CENTER_Y_CH * 6.5 - Y_AMPLIFIER9 * displayDataCh2[i] + Y_TUNING9) * zoomRate);
 
             if ((i >= 0 && i < EcgConst.WAVE_DEVIATION_VALUE_PART1)
                 || (i >= EcgConst.WAVE_DEVIATION_VALUE_PART2 && i < EcgConst.WAVE_DEVIATION_VALUE))
             {
-                newY = CENTER_Y_CH * 6 * zoomRate;
+                newY = CENTER_Y_CH * 4 * zoomRate;
             }
             else if (i >= EcgConst.WAVE_DEVIATION_VALUE_PART1
                 && i <= EcgConst.WAVE_DEVIATION_VALUE_PART2)
             {
-                newY = (CENTER_Y_CH * 6 - EcgConst.GRID_WIDTH) * zoomRate;
+                newY = (CENTER_Y_CH * 4 - EcgConst.GRID_WIDTH) * zoomRate;
             }
 
             if (displayDataCh1[EcgConst.WAVE_DEVIATION_VALUE] == -1

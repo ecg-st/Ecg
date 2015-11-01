@@ -699,13 +699,19 @@ public class WaveScreen extends BasicActivity implements View.OnClickListener, D
             .inflate(R.layout.rich_box_txt_view,
                 null);
             // modified by zhf 20151005
-            demoWaveDialog = new AlertDialog.Builder(this).setView(scrollView).setPositiveButton("分享到微信", new OnClickListener() {
+            demoWaveDialog = new AlertDialog.Builder(this).setView(scrollView).setPositiveButton("分享图片", new OnClickListener() {
 				
 				@Override
 				public void onClick(DialogInterface dialog, int which) {
-					showShare(message, path);
+					showShare(message, path, true);
 				}
-			}).create();
+			}).setNegativeButton("分享文字", new OnClickListener() {
+				@Override
+				public void onClick(DialogInterface paramDialogInterface, int paramInt) {
+					showShare(message, path, false);
+				}
+			})
+			.create();
             demoWaveDialog.setTitle(title);
             TextView txtView = (TextView)scrollView.findViewById(R.id.txt_view);
             txtView.setText(message);
@@ -1785,10 +1791,10 @@ public class WaveScreen extends BasicActivity implements View.OnClickListener, D
 						
 						@Override
 						public boolean accept(File dir, String filename) {
-							return filename.endsWith("_dot.png");
+							return !filename.endsWith("_dot.png");
 						}
 					});
-                    createRichTxtDialog(getString(R.string.diagnose_result), data.getDiagnoseResult(), files.length > 0? files[0].getAbsolutePath() : null);
+                    createRichTxtDialog(getString(R.string.diagnose_result), data.getDiagnoseResult(), files.length > 0? files[(int)(files.length * 0.7)].getAbsolutePath() : null);
                 }
                 break;
             case ACTION_DOT_GRAPH:// 显示散点图
@@ -2679,7 +2685,7 @@ public class WaveScreen extends BasicActivity implements View.OnClickListener, D
 	 * @param text
 	 * @param imagePath
 	 */
-	private void showShare(String text, String imagePath) {
+	private void showShare(String text, String imagePath, boolean shareImage) {
 		 ShareSDK.initSDK(this);
 		 OnekeyShare oks = new OnekeyShare();
 		 //关闭sso授权
@@ -2687,13 +2693,22 @@ public class WaveScreen extends BasicActivity implements View.OnClickListener, D
 		 
 		 // title标题，印象笔记、邮箱、信息、微信、人人网和QQ空间使用
 		 oks.setTitle(getString(R.string.app_name));
-		 oks.setComment(text);
-		 // text是分享文本，所有平台都需要这个字段
-		 oks.setText(text);
-		 // imagePath是图片的本地路径，Linked-In以外的平台都支持此参数
-		 if (!TextUtils.isEmpty(imagePath) && new File(imagePath).exists() && new File(imagePath).isFile())
+		 if (!shareImage) // 分享文字
 		 {
-			 oks.setImagePath(imagePath);//确保SDcard下面存在此张图片
+			 // text是分享文本，所有平台都需要这个字段
+			 oks.setText(text);
+		 }
+		 else // 分享图片
+		 {
+			 // imagePath是图片的本地路径，Linked-In以外的平台都支持此参数
+			 if (!TextUtils.isEmpty(imagePath) && new File(imagePath).exists() && new File(imagePath).isFile())
+			 {
+				 oks.setImagePath(imagePath);//确保SDcard下面存在此张图片
+			 }
+			 else
+			 {
+				 oks.setText(text);
+			 }
 		 }
 //		 // url仅在微信（包括好友和朋友圈）中使用
 //		 oks.setUrl("http://sharesdk.cn");
@@ -2786,9 +2801,9 @@ public class WaveScreen extends BasicActivity implements View.OnClickListener, D
                     EcgWaveData.resumeThread();
                     
                     /**
-                     * 延迟2分钟截屏
+                     * 延迟半分钟截屏
                      */
-                    postDelayed(delayShot, 1000 * 60 * 2);
+                    postDelayed(delayShot, 1000 * 30);
                     
                     
                     // 测量时长add by zhf 2015.09.28

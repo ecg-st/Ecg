@@ -505,17 +505,17 @@ public class EcgDrawView extends SurfaceView implements SurfaceHolder.Callback
     /** 肢体导联、模拟肢体导联之间的波形间隔*/
     public static int marginBetweenWave = 0;
     /** 文字X轴偏移量 */
-    private static final int TEXT_X_OFFSET = 40;
+    public static final int TEXT_X_OFFSET = 40;
     /** 波形Y轴放大倍数调节系数 (by Huo)*/
-    public static final double Y_AMPLIFIER1 = 1.1; //for I, MI
-    public static final double Y_AMPLIFIER2 = 1.1; //for II,MII
-    public static final double Y_AMPLIFIER3 = 1.1; //for III, MIII
-    public static final double Y_AMPLIFIER4 = 1.1; //for aVR, MaVR
-    public static final double Y_AMPLIFIER5 = 1.1; //for aVL, MaVL
-    public static final double Y_AMPLIFIER6 = 1.1; //for aVF, MaVF
-    public static final double Y_AMPLIFIER7 = 1.1; //for MV1
-    public static final double Y_AMPLIFIER8 = 1.1; //for MV5
-    public static final double Y_AMPLIFIER9 = 1.1; //for simp
+    public static final double Y_AMPLIFIER1 = 0.75; //for I, MI
+    public static final double Y_AMPLIFIER2 = 0.75; //for II,MII
+    public static final double Y_AMPLIFIER3 = 0.75; //for III, MIII
+    public static final double Y_AMPLIFIER4 = 0.75; //for aVR, MaVR
+    public static final double Y_AMPLIFIER5 = 0.75; //for aVL, MaVL
+    public static final double Y_AMPLIFIER6 = 0.75; //for aVF, MaVF
+    public static final double Y_AMPLIFIER7 = 0.75; //for MV1
+    public static final double Y_AMPLIFIER8 = 0.75; //for MV5
+    public static final double Y_AMPLIFIER9 = 0.75; //for simp
     /**波形Y轴偏移量微调 (by Huo)*/
     public static final int Y_TUNING1 = 4; //for I, MI
     public static final int Y_TUNING2 = 27; //for II,MII
@@ -1411,11 +1411,11 @@ public class EcgDrawView extends SurfaceView implements SurfaceHolder.Callback
 
         // Draw II
         oldX = EcgConst.DISPLAY_LEFT_LEAD_NUMBER_WIDTH;
-        oldY = (int) (CENTER_Y_CH * 4 - Y_AMPLIFIER9 * displayDataCh2[0] + Y_TUNING9);
+        oldY = (int) (CENTER_Y_CH * 3.5 - Y_AMPLIFIER9 * displayDataCh2[0] + Y_TUNING9);
         newY = 0;
         for (int i = 0; i < updateCh1DataIndex + EcgConst.WAVE_DEVIATION_VALUE; i++)
         {
-            newY = (int) (CENTER_Y_CH * 8 - Y_AMPLIFIER9 * displayDataCh2[i] + Y_TUNING9);
+            newY = (int) (CENTER_Y_CH * 6.5 - Y_AMPLIFIER9 * displayDataCh2[i] + Y_TUNING9);
 
             if ((i >= 0 && i < EcgConst.WAVE_DEVIATION_VALUE_PART1)
                 || (i >= EcgConst.WAVE_DEVIATION_VALUE_PART2 && i < EcgConst.WAVE_DEVIATION_VALUE))

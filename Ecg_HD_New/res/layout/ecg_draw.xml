@@ -49,8 +49,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:layout_marginLeft="50dp"
-                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
                         android:layout_toRightOf="@id/record_status"
                         android:text="@string/pause_btn_txt"
                         android:visibility="invisible" />
@@ -60,7 +59,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
                         android:layout_toRightOf="@id/replay_pause_btn"
                         android:text="@string/back_btn_txt"
                         android:visibility="invisible" />
@@ -70,6 +69,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
                         android:layout_toRightOf="@id/back_btn"
                         android:text="@string/zoom_btn_txt"
                         android:visibility="invisible" />
@@ -87,7 +87,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:layout_marginRight="20dp"
+                        android:layout_marginRight="10dp"
                         android:layout_toLeftOf="@id/mode_switch_btn"
                         android:text="@string/history_data_btn_txt"
                         android:visibility="invisible" />

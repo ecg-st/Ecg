@@ -884,16 +884,12 @@ public class ReportUtil
      * @author zhuhf
      * @version [ME MTVClient_Handset V100R001C04SPC002, 2012-12-20]
      */
-    private class WaveDrawer
+    public class WaveDrawer
     {
         private int[] displayDataCh1;
         private int[] displayDataCh2;
         private int updateCh1DataIndex;
         private boolean switchScreen;
-        /** 波形Y轴基偏移量 */
-        private static final int CENTER_Y_CH = 50;
-        /** 文字X轴偏移量 */
-        private static final int TEXT_X_OFFSET = 40;
         private Paint ch0_paint = new Paint();
         private Paint ch1_paint = new Paint();
         private Paint ch2_paint = new Paint();
@@ -1001,29 +997,6 @@ public class ReportUtil
             }
         }
         
-        /** 肢体导联、模拟肢体导联之间的波形间隔*/
-        public int marginBetweenWave = 0;
-        /** 波形Y轴放大倍数调节系数 (by Huo)*/
-        public static final double Y_AMPLIFIER1 = 1.1; //for I, MI
-        public static final double Y_AMPLIFIER2 = 1.1; //for II,MII
-        public static final double Y_AMPLIFIER3 = 1.1; //for III, MIII
-        public static final double Y_AMPLIFIER4 = 1.1; //for aVR, MaVR
-        public static final double Y_AMPLIFIER5 = 1.1; //for aVL, MaVL
-        public static final double Y_AMPLIFIER6 = 1.1; //for aVF, MaVF
-        public static final double Y_AMPLIFIER7 = 1.1; //for MV1
-        public static final double Y_AMPLIFIER8 = 1.1; //for MV5
-        public static final double Y_AMPLIFIER9 = 1.1; //for simp
-        /**波形Y轴偏移量微调 (by Huo)*/
-        public static final int Y_TUNING1 = 4; //for I, MI
-        public static final int Y_TUNING2 = 27; //for II,MII
-        public static final int Y_TUNING3 = 24; //for III, MIII
-        public static final int Y_TUNING4 = -14; //for aVR, MaVR
-        public static final int Y_TUNING5 = -10; //for aVL, MaVL
-        public static final int Y_TUNING6 = 25; //for aVF, MaVF
-        public static final int Y_TUNING7 = 24; //for MV1
-        public static final int Y_TUNING8 = 27; //for MV5
-        public static final int Y_TUNING9 = 27; //for simp
-        
         /**
          * 绘制心率
          * @param canvas
@@ -1061,25 +1034,25 @@ public class ReportUtil
             {
                 // Draw I
                 oldX = EcgConst.DISPLAY_LEFT_LEAD_NUMBER_WIDTH;
-                oldY = (int) (CENTER_Y_CH * 2 - Y_AMPLIFIER1 * (displayDataCh2[0] - displayDataCh1[0]) + Y_TUNING1);
+                oldY = (int) (EcgDrawView.CENTER_Y_CH * 2 - EcgDrawView.Y_AMPLIFIER1 * (displayDataCh2[0] - displayDataCh1[0]) + EcgDrawView.Y_TUNING1);
                 newY = 0;
                 if (displayDataCh1[EcgConst.WAVE_DEVIATION_VALUE] != -1)
                 {
-                    canvas.drawText("Ⅰ", TEXT_X_OFFSET, CENTER_Y_CH, textPaint0);
+                    canvas.drawText("Ⅰ", EcgDrawView.TEXT_X_OFFSET, EcgDrawView.CENTER_Y_CH, textPaint0);
                 }
                 for (int i = 0; i < updateCh1DataIndex + EcgConst.WAVE_DEVIATION_VALUE; i++)
                 {
-                    newY = (int) (CENTER_Y_CH * 2 - Y_AMPLIFIER1 * (displayDataCh2[i] - displayDataCh1[i]) + Y_TUNING1);
+                    newY = (int) (EcgDrawView.CENTER_Y_CH * 2 - EcgDrawView.Y_AMPLIFIER1 * (displayDataCh2[i] - displayDataCh1[i]) + EcgDrawView.Y_TUNING1);
                     
                     if ((i >= 0 && i < EcgConst.WAVE_DEVIATION_VALUE_PART1)
                         || (i >= EcgConst.WAVE_DEVIATION_VALUE_PART2 && i < EcgConst.WAVE_DEVIATION_VALUE))
                     {
-                        newY = CENTER_Y_CH * 2;
+                        newY = EcgDrawView.CENTER_Y_CH * 2;
                     }
                     else if (i >= EcgConst.WAVE_DEVIATION_VALUE_PART1
                         && i <= EcgConst.WAVE_DEVIATION_VALUE_PART2)
                     {
-                        newY = CENTER_Y_CH * 2 - EcgConst.GRID_WIDTH;
+                        newY = EcgDrawView.CENTER_Y_CH * 2 - EcgConst.GRID_WIDTH;
                     }
                     
                     if (displayDataCh1[EcgConst.WAVE_DEVIATION_VALUE] == -1 || (i > EcgConst.WAVE_DEVIATION_VALUE && displayDataCh1[i] == -1))
@@ -1114,25 +1087,25 @@ public class ReportUtil
 
                 // Draw II
                 oldX = EcgConst.DISPLAY_LEFT_LEAD_NUMBER_WIDTH;
-                oldY = (int) (CENTER_Y_CH * 5.5 - marginBetweenWave - Y_AMPLIFIER2 * displayDataCh2[0] + Y_TUNING2);
+                oldY = (int) (EcgDrawView.CENTER_Y_CH * 5.5 - EcgDrawView.marginBetweenWave - EcgDrawView.Y_AMPLIFIER2 * displayDataCh2[0] + EcgDrawView.Y_TUNING2);
                 newY = 0;
                 if (displayDataCh2[EcgConst.WAVE_DEVIATION_VALUE] != -1)
                 {
-                    canvas.drawText("Ⅱ", TEXT_X_OFFSET, (int)(CENTER_Y_CH * 4.5 - marginBetweenWave), textPaint1);
+                    canvas.drawText("Ⅱ", EcgDrawView.TEXT_X_OFFSET, (int)(EcgDrawView.CENTER_Y_CH * 4.5 - EcgDrawView.marginBetweenWave), textPaint1);
                 }
                 for (int i = 0; i < updateCh1DataIndex + EcgConst.WAVE_DEVIATION_VALUE; i++)
                 {
-                    newY = (int) (CENTER_Y_CH * 9.5 - marginBetweenWave - Y_AMPLIFIER2 * displayDataCh2[i] + Y_TUNING2);
+                    newY = (int) (EcgDrawView.CENTER_Y_CH * 9.5 - EcgDrawView.marginBetweenWave - EcgDrawView.Y_AMPLIFIER2 * displayDataCh2[i] + EcgDrawView.Y_TUNING2);
                     
                     if ((i >= 0 && i < EcgConst.WAVE_DEVIATION_VALUE_PART1)
                         || (i >= EcgConst.WAVE_DEVIATION_VALUE_PART2 && i < EcgConst.WAVE_DEVIATION_VALUE))
                     {
-                        newY = (int) (CENTER_Y_CH * 5.5 - marginBetweenWave);
+                        newY = (int) (EcgDrawView.CENTER_Y_CH * 5.5 - EcgDrawView.marginBetweenWave);
                     }
                     else if (i >= EcgConst.WAVE_DEVIATION_VALUE_PART1
                         && i <= EcgConst.WAVE_DEVIATION_VALUE_PART2)
                     {
-                        newY = (int) (CENTER_Y_CH * 5.5 - marginBetweenWave - EcgConst.GRID_WIDTH);
+                        newY = (int) (EcgDrawView.CENTER_Y_CH * 5.5 - EcgDrawView.marginBetweenWave - EcgConst.GRID_WIDTH);
                     }
                     
                     if (displayDataCh2[EcgConst.WAVE_DEVIATION_VALUE] == -1 || (i > EcgConst.WAVE_DEVIATION_VALUE && displayDataCh2[i] == -1))
@@ -1166,25 +1139,25 @@ public class ReportUtil
 
                 // Draw III
                 oldX = EcgConst.DISPLAY_LEFT_LEAD_NUMBER_WIDTH;
-                oldY = (int) (CENTER_Y_CH * 9 - marginBetweenWave * 2 - Y_AMPLIFIER3 * displayDataCh1[0] + Y_TUNING3);
+                oldY = (int) (EcgDrawView.CENTER_Y_CH * 9 - EcgDrawView.marginBetweenWave * 2 - EcgDrawView.Y_AMPLIFIER3 * displayDataCh1[0] + EcgDrawView.Y_TUNING3);
                 newY = 0;
                 if (displayDataCh1[EcgConst.WAVE_DEVIATION_VALUE] != -1)
                 {
-                    canvas.drawText("Ⅲ", TEXT_X_OFFSET, CENTER_Y_CH * 8 - marginBetweenWave * 2, textPaint2);
+                    canvas.drawText("Ⅲ", EcgDrawView.TEXT_X_OFFSET, EcgDrawView.CENTER_Y_CH * 8 - EcgDrawView.marginBetweenWave * 2, textPaint2);
                 }
                 for (int i = 0; i < updateCh1DataIndex + EcgConst.WAVE_DEVIATION_VALUE; i++)
                 {
-                    newY = (int) (CENTER_Y_CH * 13 - marginBetweenWave * 2 - Y_AMPLIFIER3 * displayDataCh1[i] + Y_TUNING3);
+                    newY = (int) (EcgDrawView.CENTER_Y_CH * 13 - EcgDrawView.marginBetweenWave * 2 - EcgDrawView.Y_AMPLIFIER3 * displayDataCh1[i] + EcgDrawView.Y_TUNING3);
 
                     if ((i >= 0 && i < EcgConst.WAVE_DEVIATION_VALUE_PART1)
                         || (i >= EcgConst.WAVE_DEVIATION_VALUE_PART2 && i < EcgConst.WAVE_DEVIATION_VALUE))
                     {
-                        newY = CENTER_Y_CH * 9 - marginBetweenWave * 2;
+                        newY = EcgDrawView.CENTER_Y_CH * 9 - EcgDrawView.marginBetweenWave * 2;
                     }
                     else if (i >= EcgConst.WAVE_DEVIATION_VALUE_PART1
                         && i <= EcgConst.WAVE_DEVIATION_VALUE_PART2)
                     {
-                        newY = CENTER_Y_CH * 9 - marginBetweenWave * 2 - EcgConst.GRID_WIDTH;
+                        newY = EcgDrawView.CENTER_Y_CH * 9 - EcgDrawView.marginBetweenWave * 2 - EcgConst.GRID_WIDTH;
                     }
                     
                     if (displayDataCh1[EcgConst.WAVE_DEVIATION_VALUE] == -1 || (i > EcgConst.WAVE_DEVIATION_VALUE && displayDataCh1[i] == -1))
@@ -1220,25 +1193,25 @@ public class ReportUtil
             {
                 // Draw AVR
                 oldX = EcgConst.DISPLAY_LEFT_LEAD_NUMBER_WIDTH;
-                oldY = (int) (CENTER_Y_CH * 3 - marginBetweenWave - Y_AMPLIFIER4 * (displayDataCh1[0] - 2 * displayDataCh2[0]) / 2 + Y_TUNING4);
+                oldY = (int) (EcgDrawView.CENTER_Y_CH * 3 - EcgDrawView.marginBetweenWave - EcgDrawView.Y_AMPLIFIER4 * (displayDataCh1[0] - 2 * displayDataCh2[0]) / 2 + EcgDrawView.Y_TUNING4);
                 newY = 0;
                 if (displayDataCh1[EcgConst.WAVE_DEVIATION_VALUE] != -1)
                 {
-                    canvas.drawText("aVR", TEXT_X_OFFSET, CENTER_Y_CH * 2 - marginBetweenWave, textPaint0);
+                    canvas.drawText("aVR", EcgDrawView.TEXT_X_OFFSET, EcgDrawView.CENTER_Y_CH * 2 - EcgDrawView.marginBetweenWave, textPaint0);
                 }
                 for (int i = 0; i < updateCh1DataIndex + EcgConst.WAVE_DEVIATION_VALUE; i++)
                 {
-                    newY = (int) ( - marginBetweenWave - Y_AMPLIFIER4 * (displayDataCh1[i] - 2 * displayDataCh2[i]) + Y_TUNING4 - CENTER_Y_CH);
+                    newY = (int) ( - EcgDrawView.marginBetweenWave - EcgDrawView.Y_AMPLIFIER4 * (displayDataCh1[i] - 2 * displayDataCh2[i]) / 2 + EcgDrawView.Y_TUNING4 + EcgDrawView.CENTER_Y_CH);
 
                     if ((i >= 0 && i < EcgConst.WAVE_DEVIATION_VALUE_PART1)
                         || (i >= EcgConst.WAVE_DEVIATION_VALUE_PART2 && i < EcgConst.WAVE_DEVIATION_VALUE))
                     {
-                        newY = CENTER_Y_CH * 3 - marginBetweenWave;
+                        newY = EcgDrawView.CENTER_Y_CH * 3 - EcgDrawView.marginBetweenWave;
                     }
                     else if (i >= EcgConst.WAVE_DEVIATION_VALUE_PART1
                         && i <= EcgConst.WAVE_DEVIATION_VALUE_PART2)
                     {
-                        newY = CENTER_Y_CH * 3 - marginBetweenWave - EcgConst.GRID_WIDTH;
+                        newY = EcgDrawView.CENTER_Y_CH * 3 - EcgDrawView.marginBetweenWave - EcgConst.GRID_WIDTH;
                     }
                     
                     if (displayDataCh1[EcgConst.WAVE_DEVIATION_VALUE] == -1 || (i > EcgConst.WAVE_DEVIATION_VALUE && displayDataCh1[i] == -1))
@@ -1271,25 +1244,25 @@ public class ReportUtil
                 }
                 // Draw AVL
                 oldX = EcgConst.DISPLAY_LEFT_LEAD_NUMBER_WIDTH;
-                oldY = (int) (CENTER_Y_CH * 5.5 - marginBetweenWave - Y_AMPLIFIER5 * (displayDataCh2[0] - 2 * displayDataCh1[0]) / 2 + Y_TUNING5);
+                oldY = (int) (EcgDrawView.CENTER_Y_CH * 5.5 - EcgDrawView.marginBetweenWave - EcgDrawView.Y_AMPLIFIER5 * (displayDataCh2[0] - 2 * displayDataCh1[0]) / 2 + EcgDrawView.Y_TUNING5);
                 newY = 0;
                 if (displayDataCh1[EcgConst.WAVE_DEVIATION_VALUE] != -1)
                 {
-                    canvas.drawText("aVL", TEXT_X_OFFSET, (int)(CENTER_Y_CH * 4.5 - marginBetweenWave), textPaint1);
+                    canvas.drawText("aVL", EcgDrawView.TEXT_X_OFFSET, (int)(EcgDrawView.CENTER_Y_CH * 4.5 - EcgDrawView.marginBetweenWave), textPaint1);
                 }
                 for (int i = 0; i < updateCh1DataIndex + EcgConst.WAVE_DEVIATION_VALUE; i++)
                 {
-                    newY = (int) (CENTER_Y_CH * 3.5 - marginBetweenWave - Y_AMPLIFIER5 * (displayDataCh2[i] - 2 * displayDataCh1[i]) / 2 + Y_TUNING5);
+                    newY = (int) (EcgDrawView.CENTER_Y_CH * 3.5 - EcgDrawView.marginBetweenWave - EcgDrawView.Y_AMPLIFIER5 * (displayDataCh2[i] - 2 * displayDataCh1[i]) / 2 + EcgDrawView.Y_TUNING5);
 
                     if ((i >= 0 && i < EcgConst.WAVE_DEVIATION_VALUE_PART1)
                         || (i >= EcgConst.WAVE_DEVIATION_VALUE_PART2 && i < EcgConst.WAVE_DEVIATION_VALUE))
                     {
-                        newY = (int) (CENTER_Y_CH * 5.5 - marginBetweenWave);
+                        newY = (int) (EcgDrawView.CENTER_Y_CH * 5.5 - EcgDrawView.marginBetweenWave);
                     }
                     else if (i >= EcgConst.WAVE_DEVIATION_VALUE_PART1
                         && i <= EcgConst.WAVE_DEVIATION_VALUE_PART2)
                     {
-                        newY = (int) (CENTER_Y_CH * 5.5 - marginBetweenWave - EcgConst.GRID_WIDTH);
+                        newY = (int) (EcgDrawView.CENTER_Y_CH * 5.5 - EcgDrawView.marginBetweenWave - EcgConst.GRID_WIDTH);
                     }
                     
                     if (displayDataCh1[EcgConst.WAVE_DEVIATION_VALUE] == -1 || (i > EcgConst.WAVE_DEVIATION_VALUE && displayDataCh1[i] == -1))
@@ -1322,25 +1295,25 @@ public class ReportUtil
                 }
                 // Draw AVF
                 oldX = EcgConst.DISPLAY_LEFT_LEAD_NUMBER_WIDTH;
-                oldY = (int) (CENTER_Y_CH * 9 - marginBetweenWave * 2 - Y_AMPLIFIER6 * (displayDataCh1[0] + displayDataCh2[0]) / 2 + Y_TUNING6);
+                oldY = (int) (EcgDrawView.CENTER_Y_CH * 9 - EcgDrawView.marginBetweenWave * 2 - EcgDrawView.Y_AMPLIFIER6 * (displayDataCh1[0] + displayDataCh2[0]) / 2 + EcgDrawView.Y_TUNING6);
                 newY = 0;
                 if (displayDataCh1[EcgConst.WAVE_DEVIATION_VALUE] != -1)
                 {
-                    canvas.drawText("aVF", TEXT_X_OFFSET, CENTER_Y_CH * 8 - marginBetweenWave * 2, textPaint2);
+                    canvas.drawText("aVF", EcgDrawView.TEXT_X_OFFSET, EcgDrawView.CENTER_Y_CH * 8 - EcgDrawView.marginBetweenWave * 2, textPaint2);
                 }
                 for (int i = 0; i < updateCh1DataIndex + EcgConst.WAVE_DEVIATION_VALUE; i++)
                 {
-                    newY = (int) (CENTER_Y_CH * 13 - marginBetweenWave * 2 - Y_AMPLIFIER6 * (displayDataCh1[i] + displayDataCh2[i]) / 2 + Y_TUNING6);
+                    newY = (int) (EcgDrawView.CENTER_Y_CH * 13 - EcgDrawView.marginBetweenWave * 2 - EcgDrawView.Y_AMPLIFIER6 * (displayDataCh1[i] + displayDataCh2[i]) / 2 + EcgDrawView.Y_TUNING6);
 
                     if ((i >= 0 && i < EcgConst.WAVE_DEVIATION_VALUE_PART1)
                         || (i >= EcgConst.WAVE_DEVIATION_VALUE_PART2 && i < EcgConst.WAVE_DEVIATION_VALUE))
                     {
-                        newY = CENTER_Y_CH * 9 - marginBetweenWave * 2;
+                        newY = EcgDrawView.CENTER_Y_CH * 9 - EcgDrawView.marginBetweenWave * 2;
                     }
                     else if (i >= EcgConst.WAVE_DEVIATION_VALUE_PART1
                         && i <= EcgConst.WAVE_DEVIATION_VALUE_PART2)
                     {
-                        newY = CENTER_Y_CH * 9 - marginBetweenWave * 2 - EcgConst.GRID_WIDTH;
+                        newY = EcgDrawView.CENTER_Y_CH * 9 - EcgDrawView.marginBetweenWave * 2 - EcgConst.GRID_WIDTH;
                     }
                     
                     if (displayDataCh1[EcgConst.WAVE_DEVIATION_VALUE] == -1 || (i > EcgConst.WAVE_DEVIATION_VALUE && displayDataCh1[i] == -1))
@@ -1387,28 +1360,28 @@ public class ReportUtil
             {
                 // Draw MI
                 oldX = EcgConst.DISPLAY_LEFT_LEAD_NUMBER_WIDTH;
-                oldY = (CENTER_Y_CH * 2 - marginBetweenWave - (displayDataCh2[0] - displayDataCh1[0]));
+                oldY = (EcgDrawView.CENTER_Y_CH * 2 - EcgDrawView.marginBetweenWave - (displayDataCh2[0] - displayDataCh1[0]));
                 newY = 0;
                 if (displayDataCh1[EcgConst.WAVE_DEVIATION_VALUE] != -1)
                 {
                     canvas.drawText("MⅠ",
-                        TEXT_X_OFFSET,
-                        CENTER_Y_CH - marginBetweenWave,
+                    		EcgDrawView.TEXT_X_OFFSET,
+                    		EcgDrawView.CENTER_Y_CH - EcgDrawView.marginBetweenWave,
                         textPaint0);
                 }
                 for (int i = 0; i < updateCh1DataIndex + EcgConst.WAVE_DEVIATION_VALUE; i++)
                 {
-                    newY = (CENTER_Y_CH * 2 - marginBetweenWave - (displayDataCh2[i] - displayDataCh1[i]));
+                    newY = (EcgDrawView.CENTER_Y_CH * 2 - EcgDrawView.marginBetweenWave - (displayDataCh2[i] - displayDataCh1[i]));
 
                     if ((i >= 0 && i < EcgConst.WAVE_DEVIATION_VALUE_PART1)
                         || (i >= EcgConst.WAVE_DEVIATION_VALUE_PART2 && i < EcgConst.WAVE_DEVIATION_VALUE))
                     {
-                        newY = CENTER_Y_CH * 2 - marginBetweenWave;
+                        newY = EcgDrawView.CENTER_Y_CH * 2 - EcgDrawView.marginBetweenWave;
                     }
                     else if (i >= EcgConst.WAVE_DEVIATION_VALUE_PART1
                         && i <= EcgConst.WAVE_DEVIATION_VALUE_PART2)
                     {
-                        newY = CENTER_Y_CH * 2 - marginBetweenWave - EcgConst.GRID_WIDTH;
+                        newY = EcgDrawView.CENTER_Y_CH * 2 - EcgDrawView.marginBetweenWave - EcgConst.GRID_WIDTH;
                     }
 
                     if (displayDataCh1[EcgConst.WAVE_DEVIATION_VALUE] == -1
@@ -1444,28 +1417,28 @@ public class ReportUtil
 
                 // Draw MII
                 oldX = EcgConst.DISPLAY_LEFT_LEAD_NUMBER_WIDTH;
-                oldY = (CENTER_Y_CH * 6 - marginBetweenWave - displayDataCh2[0]);
+                oldY = (EcgDrawView.CENTER_Y_CH * 6 - EcgDrawView.marginBetweenWave - displayDataCh2[0]);
                 newY = 0;
                 if (displayDataCh2[EcgConst.WAVE_DEVIATION_VALUE] != -1)
                 {
                     canvas.drawText("MⅡ",
-                        TEXT_X_OFFSET,
-                        CENTER_Y_CH * 5 - marginBetweenWave,
+                    		EcgDrawView.TEXT_X_OFFSET,
+                    		EcgDrawView.CENTER_Y_CH * 5 - EcgDrawView.marginBetweenWave,
                         textPaint1);
                 }
                 for (int i = 0; i < updateCh1DataIndex + EcgConst.WAVE_DEVIATION_VALUE; i++)
                 {
-                    newY = (CENTER_Y_CH * 10 - marginBetweenWave - displayDataCh2[i]);
+                    newY = (EcgDrawView.CENTER_Y_CH * 10 - EcgDrawView.marginBetweenWave - displayDataCh2[i]);
 
                     if ((i >= 0 && i < EcgConst.WAVE_DEVIATION_VALUE_PART1)
                         || (i >= EcgConst.WAVE_DEVIATION_VALUE_PART2 && i < EcgConst.WAVE_DEVIATION_VALUE))
                     {
-                        newY = CENTER_Y_CH * 6 - marginBetweenWave;
+                        newY = EcgDrawView.CENTER_Y_CH * 6 - EcgDrawView.marginBetweenWave;
                     }
                     else if (i >= EcgConst.WAVE_DEVIATION_VALUE_PART1
                         && i <= EcgConst.WAVE_DEVIATION_VALUE_PART2)
                     {
-                        newY = CENTER_Y_CH * 6 - marginBetweenWave - EcgConst.GRID_WIDTH;
+                        newY = EcgDrawView.CENTER_Y_CH * 6 - EcgDrawView.marginBetweenWave - EcgConst.GRID_WIDTH;
                     }
 
                     if (displayDataCh2[EcgConst.WAVE_DEVIATION_VALUE] == -1
@@ -1501,28 +1474,28 @@ public class ReportUtil
 
                 // Draw MIII
                 oldX = EcgConst.DISPLAY_LEFT_LEAD_NUMBER_WIDTH;
-                oldY = (CENTER_Y_CH * 10 - marginBetweenWave * 2 - displayDataCh1[0]);
+                oldY = (EcgDrawView.CENTER_Y_CH * 10 - EcgDrawView.marginBetweenWave * 2 - displayDataCh1[0]);
                 newY = 0;
                 if (displayDataCh1[EcgConst.WAVE_DEVIATION_VALUE] != -1)
                 {
                     canvas.drawText("MⅢ",
-                        TEXT_X_OFFSET,
-                        CENTER_Y_CH * 9 - marginBetweenWave * 2,
+                    		EcgDrawView.TEXT_X_OFFSET,
+                    		EcgDrawView.CENTER_Y_CH * 9 - EcgDrawView.marginBetweenWave * 2,
                         textPaint2);
                 }
                 for (int i = 0; i < updateCh1DataIndex + EcgConst.WAVE_DEVIATION_VALUE; i++)
                 {
-                    newY = (CENTER_Y_CH * 14 - marginBetweenWave * 2 - displayDataCh1[i]);
+                    newY = (EcgDrawView.CENTER_Y_CH * 14 - EcgDrawView.marginBetweenWave * 2 - displayDataCh1[i]);
 
                     if ((i >= 0 && i < EcgConst.WAVE_DEVIATION_VALUE_PART1)
                         || (i >= EcgConst.WAVE_DEVIATION_VALUE_PART2 && i < EcgConst.WAVE_DEVIATION_VALUE))
                     {
-                        newY = CENTER_Y_CH * 10 - marginBetweenWave * 2;
+                        newY = EcgDrawView.CENTER_Y_CH * 10 - EcgDrawView.marginBetweenWave * 2;
                     }
                     else if (i >= EcgConst.WAVE_DEVIATION_VALUE_PART1
                         && i <= EcgConst.WAVE_DEVIATION_VALUE_PART2)
                     {
-                        newY = CENTER_Y_CH * 10 - marginBetweenWave * 2 - EcgConst.GRID_WIDTH;
+                        newY = EcgDrawView.CENTER_Y_CH * 10 - EcgDrawView.marginBetweenWave * 2 - EcgConst.GRID_WIDTH;
                     }
 
                     if (displayDataCh1[EcgConst.WAVE_DEVIATION_VALUE] == -1
@@ -1560,28 +1533,28 @@ public class ReportUtil
             {
                 // Draw MaVR
                 oldX = EcgConst.DISPLAY_LEFT_LEAD_NUMBER_WIDTH;
-                oldY = (CENTER_Y_CH * 2 - marginBetweenWave - (displayDataCh1[0] - 2 * displayDataCh2[0]) / 2);
+                oldY = (EcgDrawView.CENTER_Y_CH * 2 - EcgDrawView.marginBetweenWave - (displayDataCh1[0] - 2 * displayDataCh2[0]) / 2);
                 newY = 0;
                 if (displayDataCh1[EcgConst.WAVE_DEVIATION_VALUE] != -1)
                 {
                     canvas.drawText("MaVR",
-                        TEXT_X_OFFSET,
-                        CENTER_Y_CH - marginBetweenWave,
+                    		EcgDrawView.TEXT_X_OFFSET,
+                    		EcgDrawView.CENTER_Y_CH - EcgDrawView.marginBetweenWave,
                         textPaint0);
                 }
                 for (int i = 0; i < updateCh1DataIndex + EcgConst.WAVE_DEVIATION_VALUE; i++)
                 {
-                    newY = ( - (displayDataCh1[i] - marginBetweenWave - 2 * displayDataCh2[i]) / 2);
+                    newY = ( - (displayDataCh1[i] - EcgDrawView.marginBetweenWave - 2 * displayDataCh2[i]) / 2);
 
                     if ((i >= 0 && i < EcgConst.WAVE_DEVIATION_VALUE_PART1)
                         || (i >= EcgConst.WAVE_DEVIATION_VALUE_PART2 && i < EcgConst.WAVE_DEVIATION_VALUE))
                     {
-                        newY = CENTER_Y_CH * 2 - marginBetweenWave;
+                        newY = EcgDrawView.CENTER_Y_CH * 2 - EcgDrawView.marginBetweenWave;
                     }
                     else if (i >= EcgConst.WAVE_DEVIATION_VALUE_PART1
                         && i <= EcgConst.WAVE_DEVIATION_VALUE_PART2)
                     {
-                        newY = CENTER_Y_CH * 2 - marginBetweenWave - EcgConst.GRID_WIDTH;
+                        newY = EcgDrawView.CENTER_Y_CH * 2 - EcgDrawView.marginBetweenWave - EcgConst.GRID_WIDTH;
                     }
 
                     if (displayDataCh1[EcgConst.WAVE_DEVIATION_VALUE] == -1
@@ -1616,28 +1589,28 @@ public class ReportUtil
                 }
                 // Draw MaVL
                 oldX = EcgConst.DISPLAY_LEFT_LEAD_NUMBER_WIDTH;
-                oldY = (CENTER_Y_CH * 6 - marginBetweenWave - (displayDataCh2[0] - 2 * displayDataCh1[0]) / 2);
+                oldY = (EcgDrawView.CENTER_Y_CH * 6 - EcgDrawView.marginBetweenWave - (displayDataCh2[0] - 2 * displayDataCh1[0]) / 2);
                 newY = 0;
                 if (displayDataCh1[EcgConst.WAVE_DEVIATION_VALUE] != -1)
                 {
                     canvas.drawText("MaVL",
-                        TEXT_X_OFFSET,
-                        CENTER_Y_CH * 5 - marginBetweenWave,
+                    		EcgDrawView.TEXT_X_OFFSET,
+                    		EcgDrawView.CENTER_Y_CH * 5 - EcgDrawView.marginBetweenWave,
                         textPaint1);
                 }
                 for (int i = 0; i < updateCh1DataIndex + EcgConst.WAVE_DEVIATION_VALUE; i++)
                 {
-                    newY = (CENTER_Y_CH * 4 - marginBetweenWave - (displayDataCh2[i] - 2 * displayDataCh1[i]) / 2);
+                    newY = (EcgDrawView.CENTER_Y_CH * 4 - EcgDrawView.marginBetweenWave - (displayDataCh2[i] - 2 * displayDataCh1[i]) / 2);
 
                     if ((i >= 0 && i < EcgConst.WAVE_DEVIATION_VALUE_PART1)
                         || (i >= EcgConst.WAVE_DEVIATION_VALUE_PART2 && i < EcgConst.WAVE_DEVIATION_VALUE))
                     {
-                        newY = CENTER_Y_CH * 6 - marginBetweenWave;
+                        newY = EcgDrawView.CENTER_Y_CH * 6 - EcgDrawView.marginBetweenWave;
                     }
                     else if (i >= EcgConst.WAVE_DEVIATION_VALUE_PART1
                         && i <= EcgConst.WAVE_DEVIATION_VALUE_PART2)
                     {
-                        newY = CENTER_Y_CH * 6 - marginBetweenWave - EcgConst.GRID_WIDTH;
+                        newY = EcgDrawView.CENTER_Y_CH * 6 - EcgDrawView.marginBetweenWave - EcgConst.GRID_WIDTH;
                     }
 
                     if (displayDataCh1[EcgConst.WAVE_DEVIATION_VALUE] == -1
@@ -1672,29 +1645,29 @@ public class ReportUtil
                 }
                 // Draw MaVF
                 oldX = EcgConst.DISPLAY_LEFT_LEAD_NUMBER_WIDTH;
-                oldY = CENTER_Y_CH * 10 - marginBetweenWave * 2 - (displayDataCh1[0] + displayDataCh2[0])
+                oldY = EcgDrawView.CENTER_Y_CH * 10 - EcgDrawView.marginBetweenWave * 2 - (displayDataCh1[0] + displayDataCh2[0])
                     / 2;
                 newY = 0;
                 if (displayDataCh1[EcgConst.WAVE_DEVIATION_VALUE] != -1)
                 {
                     canvas.drawText("MaVF",
-                        TEXT_X_OFFSET,
-                        CENTER_Y_CH * 9 - marginBetweenWave * 2,
+                    		EcgDrawView.TEXT_X_OFFSET,
+                    		EcgDrawView.CENTER_Y_CH * 9 - EcgDrawView.marginBetweenWave * 2,
                         textPaint2);
                 }
                 for (int i = 0; i < updateCh1DataIndex + EcgConst.WAVE_DEVIATION_VALUE; i++)
                 {
-                    newY = (CENTER_Y_CH * 14 - marginBetweenWave * 2 - (displayDataCh1[i] + displayDataCh2[i]) / 2);
+                    newY = (EcgDrawView.CENTER_Y_CH * 14 - EcgDrawView.marginBetweenWave * 2 - (displayDataCh1[i] + displayDataCh2[i]) / 2);
 
                     if ((i >= 0 && i < EcgConst.WAVE_DEVIATION_VALUE_PART1)
                         || (i >= EcgConst.WAVE_DEVIATION_VALUE_PART2 && i < EcgConst.WAVE_DEVIATION_VALUE))
                     {
-                        newY = CENTER_Y_CH * 10 - marginBetweenWave * 2;
+                        newY = EcgDrawView.CENTER_Y_CH * 10 - EcgDrawView.marginBetweenWave * 2;
                     }
                     else if (i >= EcgConst.WAVE_DEVIATION_VALUE_PART1
                         && i <= EcgConst.WAVE_DEVIATION_VALUE_PART2)
                     {
-                        newY = CENTER_Y_CH * 10 - marginBetweenWave * 2 - EcgConst.GRID_WIDTH;
+                        newY = EcgDrawView.CENTER_Y_CH * 10 - EcgDrawView.marginBetweenWave * 2 - EcgConst.GRID_WIDTH;
                     }
 
                     if (displayDataCh1[EcgConst.WAVE_DEVIATION_VALUE] == -1
@@ -1741,28 +1714,28 @@ public class ReportUtil
 
             // Draw MV1
             oldX = EcgConst.DISPLAY_LEFT_LEAD_NUMBER_WIDTH;
-            oldY = (int) (CENTER_Y_CH * 3 - Y_AMPLIFIER7 * displayDataCh1[0] + Y_TUNING7);
+            oldY = (int) (EcgDrawView.CENTER_Y_CH * 3 - EcgDrawView.Y_AMPLIFIER7 * displayDataCh1[0] + EcgDrawView.Y_TUNING7);
             newY = 0;
             if (displayDataCh1[EcgConst.WAVE_DEVIATION_VALUE] != -1)
             {
                 canvas.drawText("MV1",
-                    TEXT_X_OFFSET,
-                    CENTER_Y_CH * 2,
+                		EcgDrawView.TEXT_X_OFFSET,
+                		EcgDrawView.CENTER_Y_CH * 2,
                     textPaint1);
             }
             for (int i = 0; i < updateCh1DataIndex + EcgConst.WAVE_DEVIATION_VALUE; i++)
             {
-                newY = (int) (CENTER_Y_CH * 7 - Y_AMPLIFIER7 * displayDataCh1[i] + Y_TUNING7);
+                newY = (int) (EcgDrawView.CENTER_Y_CH * 7 - EcgDrawView.Y_AMPLIFIER7 * displayDataCh1[i] + EcgDrawView.Y_TUNING7);
 
                 if ((i >= 0 && i < EcgConst.WAVE_DEVIATION_VALUE_PART1)
                     || (i >= EcgConst.WAVE_DEVIATION_VALUE_PART2 && i < EcgConst.WAVE_DEVIATION_VALUE))
                 {
-                    newY = CENTER_Y_CH * 3;
+                    newY = EcgDrawView.CENTER_Y_CH * 3;
                 }
                 else if (i >= EcgConst.WAVE_DEVIATION_VALUE_PART1
                     && i <= EcgConst.WAVE_DEVIATION_VALUE_PART2)
                 {
-                    newY = CENTER_Y_CH * 3 - EcgConst.GRID_WIDTH;
+                    newY = EcgDrawView.CENTER_Y_CH * 3 - EcgConst.GRID_WIDTH;
                 }
 
                 if (displayDataCh1[EcgConst.WAVE_DEVIATION_VALUE] == -1
@@ -1798,28 +1771,28 @@ public class ReportUtil
 
             // Draw MV5
             oldX = EcgConst.DISPLAY_LEFT_LEAD_NUMBER_WIDTH;
-            oldY = (int) (CENTER_Y_CH * 7 - Y_AMPLIFIER8 * displayDataCh2[0] + Y_TUNING8);
+            oldY = (int) (EcgDrawView.CENTER_Y_CH * 7 - EcgDrawView.Y_AMPLIFIER8 * displayDataCh2[0] + EcgDrawView.Y_TUNING8);
             newY = 0;
             if (displayDataCh2[EcgConst.WAVE_DEVIATION_VALUE] != -1)
             {
                 canvas.drawText("MV5",
-                    TEXT_X_OFFSET,
-                    CENTER_Y_CH * 6,
+                		EcgDrawView.TEXT_X_OFFSET,
+                		EcgDrawView.CENTER_Y_CH * 6,
                     textPaint2);
             }
             for (int i = 0; i < updateCh1DataIndex + EcgConst.WAVE_DEVIATION_VALUE; i++)
             {
-                newY = (int) (CENTER_Y_CH * 11 - Y_AMPLIFIER8 * displayDataCh2[i] + Y_TUNING8);
+                newY = (int) (EcgDrawView.CENTER_Y_CH * 11 - EcgDrawView.Y_AMPLIFIER8 * displayDataCh2[i] + EcgDrawView.Y_TUNING8);
 
                 if ((i >= 0 && i < EcgConst.WAVE_DEVIATION_VALUE_PART1)
                     || (i >= EcgConst.WAVE_DEVIATION_VALUE_PART2 && i < EcgConst.WAVE_DEVIATION_VALUE))
                 {
-                    newY = CENTER_Y_CH * 7;
+                    newY = EcgDrawView.CENTER_Y_CH * 7;
                 }
                 else if (i >= EcgConst.WAVE_DEVIATION_VALUE_PART1
                     && i <= EcgConst.WAVE_DEVIATION_VALUE_PART2)
                 {
-                    newY = CENTER_Y_CH * 7 - EcgConst.GRID_WIDTH;
+                    newY = EcgDrawView.CENTER_Y_CH * 7 - EcgConst.GRID_WIDTH;
                 }
 
                 if (displayDataCh2[EcgConst.WAVE_DEVIATION_VALUE] == -1
@@ -1865,21 +1838,21 @@ public class ReportUtil
 
             // Draw II
             oldX = EcgConst.DISPLAY_LEFT_LEAD_NUMBER_WIDTH;
-            oldY = (int) (CENTER_Y_CH * 6 - Y_AMPLIFIER9 * displayDataCh2[0] + Y_TUNING9);
+            oldY = (int) (EcgDrawView.CENTER_Y_CH * 3.5 - EcgDrawView.Y_AMPLIFIER9 * displayDataCh2[0] + EcgDrawView.Y_TUNING9);
             newY = 0;
             for (int i = 0; i < updateCh1DataIndex + EcgConst.WAVE_DEVIATION_VALUE; i++)
             {
-                newY = (int) (CENTER_Y_CH * 10 - Y_AMPLIFIER9 * displayDataCh2[i] + Y_TUNING9);
+                newY = (int) (EcgDrawView.CENTER_Y_CH * 6.5 - EcgDrawView.Y_AMPLIFIER9 * displayDataCh2[i] + EcgDrawView.Y_TUNING9);
 
                 if ((i >= 0 && i < EcgConst.WAVE_DEVIATION_VALUE_PART1)
                     || (i >= EcgConst.WAVE_DEVIATION_VALUE_PART2 && i < EcgConst.WAVE_DEVIATION_VALUE))
                 {
-                    newY = CENTER_Y_CH * 6;
+                    newY = EcgDrawView.CENTER_Y_CH * 4;
                 }
                 else if (i >= EcgConst.WAVE_DEVIATION_VALUE_PART1
                     && i <= EcgConst.WAVE_DEVIATION_VALUE_PART2)
                 {
-                    newY = CENTER_Y_CH * 6 - EcgConst.GRID_WIDTH;
+                    newY = EcgDrawView.CENTER_Y_CH * 4 - EcgConst.GRID_WIDTH;
                 }
 
                 if (displayDataCh2[EcgConst.WAVE_DEVIATION_VALUE] == -1
